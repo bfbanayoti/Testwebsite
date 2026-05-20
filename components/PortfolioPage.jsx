@@ -5,6 +5,16 @@
 const PROJECTS = [
   {
     n: "01",
+    client: "Tribus International",
+    sector: "Website development",
+    visual: "https://banayoti.com/wp-content/uploads/2025/11/Macbook-Laptop-Screen-Mockup-1-1.png",
+    url: "https://tribus.ae/",
+    cta: "Visit Website",
+    tint: ["#6366f1", "#1a3aa8"],
+    aspect: "landscape",
+  },
+  {
+    n: "02",
     client: "Harvard Hearns Logistics",
     sector: "Website development",
     visual: "https://image.thum.io/get/width/1200/crop/750/noanimate/https://harvardhearns.com/",
@@ -16,20 +26,10 @@ const PROJECTS = [
     frame: true,
   },
   {
-    n: "02",
-    client: "Tribus International",
-    sector: "Website development",
-    visual: "https://banayoti.com/wp-content/uploads/2025/11/Macbook-Laptop-Screen-Mockup-1-1.png",
-    url: "https://tribus.ae/",
-    cta: "Visit Website",
-    tint: ["#6366f1", "#1a3aa8"],
-    aspect: "landscape",
-  },
-  {
     n: "03",
     client: "Luxx Stairwell Chandeliers",
     sector: "Website development · Payment integration",
-    visual: "https://image.thum.io/get/width/1200/crop/750/noanimate/https://luxxstairwellchandeliers.co.uk/",
+    visual: "assets/luxx-preview.webp",
     url: "https://luxxstairwellchandeliers.co.uk/",
     cta: "Visit Website",
     quote: "A fully custom e-commerce experience for a luxury UK chandelier brand — complete product catalogue, variant selection, and end-to-end payment integration.",
