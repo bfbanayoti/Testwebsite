@@ -34,7 +34,8 @@ function HeroNav({ current = "Home", onSelect }) {
     { label: "Home",       href: "#",          chevron: false },
     { label: "About Us",   href: "#about",     chevron: false },
     { label: "Services",   href: "#services",  chevron: false },
-    { label: "Portfolio",  href: "#portfolio", chevron: false },
+    { label: "Portfolio",  href: "#portfolio",   chevron: false },
+    { label: "Contact Us", href: "#contact-us", chevron: false },
   ];
 
   const handleItem = (label) => {

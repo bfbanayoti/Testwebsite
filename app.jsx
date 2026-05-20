@@ -42,19 +42,8 @@ function App() {
 
   // "Contact" is a CTA, not a page — it scrolls to the closing CTA card.
   const handleSelect = React.useCallback((label) => {
-    if (label === "Contact") {
-      // Make sure we're somewhere that has a CTA section first.
-      if (view !== "Home") setView("Home");
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          const cta = document.querySelector(".cta-card");
-          if (cta) cta.scrollIntoView({ behavior: "smooth", block: "center" });
-        });
-      });
-      return;
-    }
-    setView(label);
-  }, [view]);
+    setView(label === "Contact" ? "Contact Us" : label);
+  }, []);
 
   React.useEffect(() => { window.__handleNav = handleSelect; }, [handleSelect]);
 
@@ -67,28 +56,32 @@ function App() {
           current={view}
           onSelect={handleSelect}
           index={
-            view === "About Us"  ? "01" :
-            view === "Services"  ? "02" :
-            view === "Portfolio" ? "03" :
-                                   "01"
+            view === "About Us"   ? "01" :
+            view === "Services"   ? "02" :
+            view === "Portfolio"  ? "03" :
+            view === "Contact Us" ? "04" :
+                                    "01"
           }
           eyebrow={
-            view === "About Us"  ? "Behind the Strategy" :
-            view === "Services"  ? "What we do" :
-            view === "Portfolio" ? "Our work" :
-                                   ""
+            view === "About Us"   ? "Behind the Strategy" :
+            view === "Services"   ? "What we do" :
+            view === "Portfolio"  ? "Our work" :
+            view === "Contact Us" ? "Get in touch" :
+                                    ""
           }
           title={
-            view === "About Us"  ? "Meet Banayoti" :
-            view === "Services"  ? "From bold ideas to powerful execution," :
-            view === "Portfolio" ? "Get a glimpse of what we have" :
-                                   view
+            view === "About Us"   ? "Meet Banayoti" :
+            view === "Services"   ? "From bold ideas to powerful execution," :
+            view === "Portfolio"  ? "Get a glimpse of what we have" :
+            view === "Contact Us" ? "Let’s build something" :
+                                    view
           }
           gradTail={
-            view === "About Us"  ? "Consulting." :
-            view === "Services"  ? "every digital need." :
-            view === "Portfolio" ? "done." :
-                                   ""
+            view === "About Us"   ? "Consulting." :
+            view === "Services"   ? "every digital need." :
+            view === "Portfolio"  ? "done." :
+            view === "Contact Us" ? "remarkable." :
+                                    ""
           }
           lede={
             view === "About Us"
@@ -97,6 +90,8 @@ function App() {
               ? "We specialise in website development, digital marketing, and branding design — delivering cutting-edge solutions tailored to our clients' unique goals and industries."
               : view === "Portfolio"
               ? "Trusted by brands that want serious growth — a selection of recent engagements across hospitality, real estate, interiors, finance, and social."
+              : view === "Contact Us"
+              ? "Tell us about your project. We’ll get back to you within one business day."
               : ""
           }
         />
@@ -113,9 +108,10 @@ function App() {
             <CTASection />
           </React.Fragment>
         )}
-        {view === "About Us"  && <AboutPage />}
-        {view === "Services"  && <ServicesPage />}
-        {view === "Portfolio" && <PortfolioPage />}
+        {view === "About Us"   && <AboutPage />}
+        {view === "Services"   && <ServicesPage />}
+        {view === "Portfolio"  && <PortfolioPage />}
+        {view === "Contact Us" && <ContactPage />}
       </main>
 
       <Footer />
