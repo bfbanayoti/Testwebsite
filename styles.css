@@ -2509,62 +2509,93 @@ a.cp-info__link:hover .cp-info__value { color: var(--brand-blue); }
 ═══════════════════════════════════════════ */
 .laptop-mock {
   position: absolute;
-  inset: 6% 6%;
+  inset: 5% 5%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  filter: drop-shadow(0 24px 48px rgba(0,0,0,0.7));
 }
+
+/* ── Lid (screen half) ── */
 .laptop-mock__lid {
   width: 100%;
-  background: #111318;
-  border-radius: 10px 10px 0 0;
-  padding: 10px 12px 8px;
-  border: 1.5px solid rgba(255,255,255,0.12);
-  border-bottom: none;
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.08),
-    0 -2px 12px rgba(0,0,0,0.4);
+  background: #1c1e26;
+  border-radius: 14px 14px 3px 3px;
+  padding: 12px 12px 10px;
+  border: 1.5px solid rgba(255,255,255,0.1);
+  border-bottom: 1.5px solid rgba(0,0,0,0.6);
+  position: relative;
 }
-.laptop-mock__camera {
-  width: 5px; height: 5px;
-  border-radius: 50%;
-  background: #2a2d36;
-  margin: 0 auto 7px;
+/* Glossy top-edge catch-light */
+.laptop-mock__lid::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 14px; right: 14px; height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.28) 40%, rgba(255,255,255,0.28) 60%, transparent 100%);
+  border-radius: 2px;
 }
+
+/* ── Screen area ── */
 .laptop-mock__screen {
-  border-radius: 3px;
+  position: relative;
+  border-radius: 4px;
   overflow: hidden;
   width: 100%;
   aspect-ratio: 16 / 10;
-  background: #000;
+  background: #06070c;
 }
+
+/* MacBook display notch */
+.laptop-mock__display-notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 13%;
+  height: 16px;
+  background: #1c1e26;
+  border-radius: 0 0 10px 10px;
+  z-index: 3;
+}
+
+/* Loading skeleton */
+.laptop-mock__skeleton {
+  position: absolute;
+  inset: 0;
+  background: #0d0f14;
+  z-index: 2;
+}
+
 .laptop-mock__screen img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: top;
   display: block;
-}
-.laptop-mock__hinge {
-  width: 100%;
-  height: 3px;
-  background: #0a0c10;
-}
-.laptop-mock__base {
-  width: 112%;
-  height: 10px;
-  background: linear-gradient(180deg, #1c1f28 0%, #111318 100%);
-  border-radius: 0 0 6px 6px;
   position: relative;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+  z-index: 1;
 }
-.laptop-mock__notch {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 22%;
-  height: 4px;
-  background: #0a0c10;
-  border-radius: 4px 4px 0 0;
+
+/* ── Base (keyboard/palm-rest half) ── */
+.laptop-mock__base {
+  width: 108%;
+  height: 14px;
+  background: linear-gradient(180deg, #22252f 0%, #191b22 50%, #13151b 100%);
+  border-radius: 0 0 10px 10px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 3px;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-top: none;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+/* Center groove (hinge gap) */
+.laptop-mock__groove {
+  width: 18%;
+  height: 3px;
+  background: rgba(0,0,0,0.5);
+  border-radius: 2px;
 }

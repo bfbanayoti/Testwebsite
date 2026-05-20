@@ -126,17 +126,26 @@ const PROJECTS = [
 ];
 
 function LaptopMockup({ src, onError }) {
+  const [loaded, setLoaded] = React.useState(false);
   return (
     <div className="laptop-mock">
       <div className="laptop-mock__lid">
-        <div className="laptop-mock__camera" />
         <div className="laptop-mock__screen">
-          <img src={src} alt="" loading="lazy" referrerPolicy="no-referrer" onError={onError} />
+          <div className="laptop-mock__display-notch" />
+          {!loaded && <div className="laptop-mock__skeleton" />}
+          <img
+            src={src}
+            alt=""
+            loading="lazy"
+            referrerPolicy="no-referrer"
+            onError={onError}
+            onLoad={() => setLoaded(true)}
+            style={{ opacity: loaded ? 1 : 0, transition: "opacity 0.4s ease" }}
+          />
         </div>
       </div>
-      <div className="laptop-mock__hinge" />
       <div className="laptop-mock__base">
-        <div className="laptop-mock__notch" />
+        <div className="laptop-mock__groove" />
       </div>
     </div>
   );
