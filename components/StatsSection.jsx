@@ -4,9 +4,9 @@
 
 function StatsSection() {
   const stats = [
-    { label: "Clients",                    value: "40", suffix: "+" },
-    { label: "5‑Star Reviews",             value: "120", suffix: "+" },
-    { label: "Years of combined experience", value: "15", suffix: "+" },
+    { label: "Clients",                    value: "30", suffix: "+" },
+    { label: "5‑Star Reviews",             value: "25", suffix: "+" },
+    { label: "Years of combined experience", value: "8", suffix: "+" },
   ];
 
   return (
