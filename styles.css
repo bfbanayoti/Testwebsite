@@ -2239,14 +2239,18 @@ main {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: 340px 1fr;
-  gap: 24px;
+  grid-template-columns: 360px 1fr;
+  gap: 32px;
   align-items: start;
-  padding: 0 max(24px, 4vw) 80px;
+  padding: 56px max(48px, 6vw) 100px;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 @media (max-width: 900px) {
-  .cp-body { grid-template-columns: 1fr; }
-  .cp-intro__inner { padding: 0 24px; }
+  .cp-body {
+    grid-template-columns: 1fr;
+    padding: 40px 24px 80px;
+  }
 }
 
 /* Glass card base */
@@ -2274,7 +2278,7 @@ main {
 
 /* Info panel */
 .cp-panel__inner {
-  padding: 36px 32px;
+  padding: 44px 36px;
 }
 .cp-panel__intro {
   font-size: 14px;
@@ -2365,8 +2369,8 @@ a.cp-info__link:hover .cp-info__value { color: var(--brand-blue); }
 }
 
 /* Form wrapper */
-.cp-form-wrap { padding: 40px; }
-@media (max-width: 600px) { .cp-form-wrap { padding: 28px 20px; } }
+.cp-form-wrap { padding: 44px 40px; }
+@media (max-width: 600px) { .cp-form-wrap { padding: 32px 24px; } }
 
 /* Form layout */
 .cp-form { display: flex; flex-direction: column; gap: 20px; }
