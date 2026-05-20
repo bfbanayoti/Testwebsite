@@ -84,7 +84,7 @@ function Footer() {
           <span>© 2025 Banayoti Consulting &middot; Dubai, UAE</span>
           <span className="footer__base-meta">
             <span className="footer__star" aria-hidden="true">✦</span>
-            BANAYOTI.ae &middot; built with care in the UAE
+            Banayoti.ae &middot; built with care in the UAE
           </span>
         </div>
       </div>
