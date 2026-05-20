@@ -21,6 +21,16 @@ const TESTIMONIALS = [
     name: "Ranya Al Qasim",
     org: "Client",
   },
+  {
+    quote: "They delivered a website that truly reflects our company's vision and professionalism. We've received great feedback from clients and partners.",
+    name: "Fadil Mikhail",
+    org: "Tribus International",
+  },
+  {
+    quote: "The website perfectly captures the luxury feel of our brand. Our customers love it, and so do we.",
+    name: "Hardeep Chana",
+    org: "Luxx Stairwell Chandeliers",
+  },
 ];
 
 function Stars() {
@@ -69,6 +79,10 @@ function TestimonialsSection() {
             <TestimonialCard {...TESTIMONIALS[3]} />
           </div>
           <TestimonialCard {...TESTIMONIALS[2]} />
+        </div>
+        <div className="t-grid t-grid--row2">
+          <TestimonialCard {...TESTIMONIALS[4]} />
+          <TestimonialCard {...TESTIMONIALS[5]} />
         </div>
       </div>
     </section>

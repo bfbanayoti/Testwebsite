@@ -1381,8 +1381,13 @@ main {
   letter-spacing: 0.04em;
   margin-top: 2px;
 }
+.t-grid--row2 {
+  grid-template-columns: 1fr 1fr;
+  margin-top: 18px;
+}
 @media (max-width: 1000px) {
   .t-grid { grid-template-columns: 1fr; }
+  .t-grid--row2 { grid-template-columns: 1fr; }
 }
 
 /* ─────────────── CTA ─────────────── */
