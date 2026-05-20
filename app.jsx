@@ -41,7 +41,7 @@ function App() {
   }, [view]);
 
   // "Contact" is a CTA, not a page — it scrolls to the closing CTA card.
-  const handleSelect = (label) => {
+  const handleSelect = React.useCallback((label) => {
     if (label === "Contact") {
       // Make sure we're somewhere that has a CTA section first.
       if (view !== "Home") setView("Home");
@@ -54,7 +54,9 @@ function App() {
       return;
     }
     setView(label);
-  };
+  }, [view]);
+
+  React.useEffect(() => { window.__handleNav = handleSelect; }, [handleSelect]);
 
   return (
     <React.Fragment>
