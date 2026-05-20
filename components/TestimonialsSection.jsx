@@ -31,6 +31,14 @@ const TESTIMONIALS = [
     name: "Hardeep Chana",
     org: "Luxx Stairwell Chandeliers",
   },
+  {
+    quote: "Working with the team was seamless. They delivered exactly what we needed, on time and on brief.",
+    org: "Harvard Hearns Logistics",
+  },
+  {
+    quote: "After years with an outdated site, they gave us a modern platform we're genuinely proud of. Enquiries have increased noticeably since launch.",
+    org: "Design 2000 (UK) Ltd",
+  },
 ];
 
 function Stars() {
@@ -51,9 +59,9 @@ function TestimonialCard({ quote, name, org, featured }) {
       <Stars />
       <blockquote className="t-card__quote">{quote}</blockquote>
       <figcaption className="t-card__byline">
-        <span className="t-card__avatar" aria-hidden="true">{name[0]}</span>
+        {name && <span className="t-card__avatar" aria-hidden="true">{name[0]}</span>}
         <span>
-          <strong>{name}</strong>
+          {name && <strong>{name}</strong>}
           <span className="t-card__org">{org}</span>
         </span>
       </figcaption>
@@ -83,6 +91,10 @@ function TestimonialsSection() {
         <div className="t-grid t-grid--row2">
           <TestimonialCard {...TESTIMONIALS[4]} />
           <TestimonialCard {...TESTIMONIALS[5]} />
+        </div>
+        <div className="t-grid t-grid--row2">
+          <TestimonialCard {...TESTIMONIALS[6]} />
+          <TestimonialCard {...TESTIMONIALS[7]} />
         </div>
       </div>
     </section>
