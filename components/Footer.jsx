@@ -57,7 +57,7 @@ function Footer() {
               <li><a href="https://banayoti.com">Home</a></li>
               <li><a href="https://banayoti.com/about-us/">About Us</a></li>
               <li><a href="https://banayoti.com/services/">Services</a></li>
-              <li><a href="https://banayoti.com/portfolio/">Portfolio</a></li>
+              <li><a href="#portfolio">Portfolio</a></li>
               <li><a href="https://banayoti.com/contact-us/">Contact Us</a></li>
             </ul>
           </div>
