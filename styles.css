@@ -2080,6 +2080,14 @@ main {
   margin: 4px 0 0;
   max-width: 44ch;
 }
+.case-row__desc {
+  margin: 12px 0 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--hero-sub);
+  max-width: 52ch;
+  font-weight: 300;
+}
 .case-row__quote {
   margin: 14px 0 0;
   padding-top: 18px;

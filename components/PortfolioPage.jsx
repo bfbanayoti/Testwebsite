@@ -1,12 +1,9 @@
-// PortfolioPage.jsx — full portfolio synced from banayoti.com/portfolio.
-// Real client list, real screenshots, real outbound links, and where you've
-// published a testimonial on banayoti.com we pull the quote in too.
-
 const PROJECTS = [
   {
     n: "01",
     client: "Tribus International",
     sector: "Website development",
+    desc: "A corporate website for a Dubai-based infrastructure and construction company, built to communicate scale, capability, and regional reach across the GCC.",
     visual: "https://banayoti.com/wp-content/uploads/2025/11/Macbook-Laptop-Screen-Mockup-1-1.png",
     url: "https://tribus.ae/",
     cta: "Visit Website",
@@ -17,10 +14,10 @@ const PROJECTS = [
     n: "02",
     client: "Harvard Hearns Logistics",
     sector: "Website development",
+    desc: "A clean, conversion-focused website for a London-based logistics and supply chain company — built to communicate trust, speed, and nationwide reach.",
     visual: "https://image.thum.io/get/width/1200/crop/750/noanimate/https://harvardhearns.com/",
     url: "https://harvardhearns.com/",
     cta: "Visit Website",
-    quote: "A clean, conversion-focused website for a London-based logistics and supply chain company — built to communicate trust, speed, and nationwide reach.",
     tint: ["#1a8cff", "#0a3a8a"],
     aspect: "landscape",
     frame: true,
@@ -29,10 +26,10 @@ const PROJECTS = [
     n: "03",
     client: "Luxx Stairwell Chandeliers",
     sector: "Website development · Payment integration",
+    desc: "A fully custom e-commerce experience for a luxury UK chandelier brand — complete product catalogue, variant selection, and end-to-end payment integration.",
     visual: "assets/luxx-preview.webp",
     url: "https://luxxstairwellchandeliers.co.uk/",
     cta: "Visit Website",
-    quote: "A fully custom e-commerce experience for a luxury UK chandelier brand — complete product catalogue, variant selection, and end-to-end payment integration.",
     tint: ["#fcd34d", "#c4860a"],
     aspect: "landscape",
     frame: true,
@@ -41,6 +38,7 @@ const PROJECTS = [
     n: "04",
     client: "Excela Properties",
     sector: "Website development",
+    desc: "A polished property website for a UAE real estate company, showcasing developments and listings with a trustworthy, conversion-led design.",
     visual: "https://banayoti.com/wp-content/uploads/2025/11/Macbook-Laptop-Screen-Mockup-1-1-1.png",
     url: "http://excelahomes.com/",
     cta: "Visit Website",
@@ -53,6 +51,7 @@ const PROJECTS = [
     n: "05",
     client: "INVICTUS Investment Company",
     sector: "Website development",
+    desc: "A corporate website for a UAE investment firm, designed to project confidence, communicate expertise, and attract high-value clients.",
     visual: "https://banayoti.com/wp-content/uploads/2025/05/Macbook-Laptop-Screen-Mockup-2.png",
     url: "https://invictusinvestment.ae/",
     cta: "Visit Website",
@@ -63,6 +62,7 @@ const PROJECTS = [
     n: "06",
     client: "GI Interiors",
     sector: "Website development",
+    desc: "A premium website for a Dubai-based interior design and fit-out company, built to reflect their high-end aesthetic and showcase completed projects.",
     visual: "https://banayoti.com/wp-content/uploads/2025/05/Macbook-Laptop-Screen-Mockup.png",
     url: "https://www.giinteriors.com/",
     cta: "Visit Website",
@@ -75,6 +75,7 @@ const PROJECTS = [
     n: "07",
     client: "INVICTUS Trading",
     sector: "Website development",
+    desc: "A clean digital presence for INVICTUS Trading — reinforcing brand identity and providing a professional platform for client engagement across the UAE.",
     visual: "https://banayoti.com/wp-content/uploads/2025/06/d2713a9de67e16d6ed6a0335c242a57c63424d6c-e1748971532969.webp",
     url: "https://invictustrading.ae/",
     cta: "Visit Website",
@@ -85,6 +86,7 @@ const PROJECTS = [
     n: "08",
     client: "Wista UAE",
     sector: "Website development",
+    desc: "A professional website for a UAE business consultancy, clearly communicating their services and establishing a credible digital presence.",
     visual: "https://banayoti.com/wp-content/uploads/2025/06/Group-1707478734.png",
     url: "https://www.wistauae.com/",
     cta: "Visit Website",
@@ -97,6 +99,7 @@ const PROJECTS = [
     n: "09",
     client: "Sip and Rise",
     sector: "Social media management",
+    desc: "End-to-end social media management for a London-based specialty coffee brand — content strategy, creative direction, and building an engaged community.",
     visual: "https://banayoti.com/wp-content/uploads/2025/05/Frame-3.png",
     url: "https://www.instagram.com/sipandriselondon",
     cta: "Visit Page",
@@ -107,6 +110,7 @@ const PROJECTS = [
     n: "10",
     client: "Design 2000 (UK) Ltd",
     sector: "Website development",
+    desc: "A modern website for a long-established UK interior design firm, bringing their extensive portfolio and services online with a clean, professional finish.",
     visual: "https://banayoti.com/wp-content/uploads/2025/05/Macbook-Laptop-Screen-Mockup-1.png",
     url: "https://www.design2000.co.uk/",
     cta: "Visit Website",
@@ -117,6 +121,7 @@ const PROJECTS = [
     n: "11",
     client: "GI Interiors",
     sector: "Social media management",
+    desc: "Ongoing social media management for GI Interiors — consistent brand voice, creative content, and measurable audience growth across platforms.",
     visual: null,
     url: "https://www.instagram.com/gi_interior_fitouts",
     cta: "Visit Page",
@@ -151,7 +156,7 @@ function LaptopMockup({ src, onError }) {
   );
 }
 
-function CaseStudy({ n, client, sector, visual, url, cta, quote, by, tint, aspect = "landscape", frame = false }) {
+function CaseStudy({ n, client, sector, desc, visual, url, cta, quote, by, tint, aspect = "landscape", frame = false }) {
   const [imgFailed, setImgFailed] = React.useState(false);
 
   return (
@@ -191,10 +196,11 @@ function CaseStudy({ n, client, sector, visual, url, cta, quote, by, tint, aspec
 
         <div className="case-row__body">
           <h2 className="case-row__client">{client}</h2>
+          {desc ? <p className="case-row__desc">{desc}</p> : null}
           {quote ? (
             <blockquote className="case-row__quote">
               &ldquo;{quote}&rdquo;
-              <cite>— {by}</cite>
+              {by && <cite>— {by}</cite>}
             </blockquote>
           ) : null}
           <a
