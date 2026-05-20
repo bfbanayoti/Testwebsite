@@ -35,7 +35,6 @@ function HeroNav({ current = "Home", onSelect }) {
     { label: "About Us",   href: "#about",     chevron: false },
     { label: "Services",   href: "#services",  chevron: false },
     { label: "Portfolio",  href: "#portfolio",   chevron: false },
-    { label: "Contact Us", href: "#contact-us", chevron: false },
   ];
 
   const handleItem = (label) => {
@@ -91,7 +90,7 @@ function HeroNav({ current = "Home", onSelect }) {
           <a
             href="#contact"
             className="hero-secondary"
-            onClick={(e) => { e.preventDefault(); handleItem("Contact"); }}
+            onClick={(e) => { e.preventDefault(); handleItem("Contact Us"); }}
           >
             <span className="hero-secondary__label">Let&rsquo;s Talk</span>
             <svg viewBox="0 0 14 14" fill="none">
