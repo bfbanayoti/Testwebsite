@@ -31,6 +31,7 @@ const PROJECTS = [
     sector: "Website development · Payment integration",
     desc: "A fully custom e-commerce experience for a luxury UK chandelier brand, with a complete product catalogue, variant selection, and end-to-end payment integration.",
     quote: "The website perfectly captures the luxury feel of our brand. Our customers love it, and so do we.",
+    by: "Hardeep Chana",
     visual: "assets/luxx-preview.webp",
     url: "https://luxxstairwellchandeliers.co.uk/",
     cta: "Visit Website",
