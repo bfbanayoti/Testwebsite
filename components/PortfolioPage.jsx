@@ -99,6 +99,28 @@ const PROJECTS = [
     tint: ["#a855f7", "#4b1f9a"],
     aspect: "portrait",
   },
+  {
+    n: "10",
+    client: "Luxx Stairwell Chandeliers",
+    sector: "Website development · Payment integration",
+    visual: null,
+    url: "https://luxxstairwellchandeliers.co.uk/",
+    cta: "Visit Website",
+    quote: "A fully custom e-commerce experience for a luxury UK chandelier brand — complete product catalogue, variant selection, and end-to-end payment integration.",
+    tint: ["#fcd34d", "#c4860a"],
+    aspect: "landscape",
+  },
+  {
+    n: "11",
+    client: "Harvard Hearns Logistics",
+    sector: "Website development",
+    visual: null,
+    url: "https://harvardhearns.com/",
+    cta: "Visit Website",
+    quote: "A clean, conversion-focused website for a London-based logistics and supply chain company — built to communicate trust, speed, and nationwide reach.",
+    tint: ["#1a8cff", "#0a3a8a"],
+    aspect: "landscape",
+  },
 ];
 
 function CaseStudy({ n, client, sector, visual, url, cta, quote, by, tint, aspect = "landscape" }) {

@@ -52,20 +52,6 @@ function ContactPage() {
       <div className="cp-orb cp-orb--a" aria-hidden="true" />
       <div className="cp-orb cp-orb--b" aria-hidden="true" />
 
-      {/* ── Intro block ── */}
-      <section className="cp-intro" aria-label="Contact introduction">
-        <div className="cp-intro__inner">
-          <span className="cp-tag">Get in touch</span>
-          <h1 className="cp-intro__title">
-            Let&rsquo;s build something<br />
-            <span className="section__title-grad">remarkable.</span>
-          </h1>
-          <p className="cp-intro__sub">
-            Tell us about your project. We&rsquo;ll get back to you within one business day.
-          </p>
-        </div>
-      </section>
-
       {/* ── Two-column body ── */}
       <section className="cp-body section__inner" aria-label="Contact details and form">
 

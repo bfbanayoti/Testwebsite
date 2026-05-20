@@ -2242,8 +2242,7 @@ main {
   grid-template-columns: 340px 1fr;
   gap: 24px;
   align-items: start;
-  padding-top: 0;
-  padding-bottom: 0;
+  padding: 0 max(24px, 4vw) 80px;
 }
 @media (max-width: 900px) {
   .cp-body { grid-template-columns: 1fr; }
