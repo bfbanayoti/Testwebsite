@@ -1,0 +1,129 @@
+{
+  "version": 1,
+  "created": "2026-05-19T11:34:12.070Z",
+  "modified": "2026-05-19T11:41:15.407Z",
+  "objects": [
+    {
+      "id": "wmpc994ir",
+      "type": "rect",
+      "x": 137,
+      "y": 131,
+      "width": 869,
+      "height": 489,
+      "data": {
+        "fill": null,
+        "stroke": "#8B2500",
+        "strokeWidth": 2
+      }
+    },
+    {
+      "id": "r14cj1rpg",
+      "type": "text",
+      "x": 655,
+      "y": 331,
+      "data": {
+        "content": "hero background video",
+        "fontSize": 16,
+        "color": "#2D7DD2",
+        "bold": false
+      },
+      "width": 124,
+      "height": 42
+    },
+    {
+      "id": "kzncr8ucs",
+      "type": "rect",
+      "x": 154,
+      "y": 149,
+      "width": 841,
+      "height": 460,
+      "data": {
+        "fill": null,
+        "stroke": "#2D7DD2",
+        "strokeWidth": 2
+      }
+    },
+    {
+      "id": "z14ejx63y",
+      "type": "rect",
+      "x": 175,
+      "y": 265,
+      "width": 308,
+      "height": 320,
+      "data": {
+        "fill": null,
+        "stroke": "#3D7C2F",
+        "strokeWidth": 2
+      }
+    },
+    {
+      "id": "9pmyno59v",
+      "type": "text",
+      "x": 246,
+      "y": 304,
+      "data": {
+        "content": "Hero text",
+        "fontSize": 16,
+        "color": "#3D7C2F",
+        "bold": false
+      },
+      "width": 67,
+      "height": 21
+    },
+    {
+      "id": "xpvdmox3x",
+      "type": "text",
+      "x": 259,
+      "y": 428,
+      "data": {
+        "content": "hero subtext",
+        "fontSize": 16,
+        "color": "#3D7C2F",
+        "bold": false
+      },
+      "width": 91,
+      "height": 21
+    },
+    {
+      "id": "o2t9lbgc6",
+      "type": "rect",
+      "x": 169,
+      "y": 163,
+      "width": 813,
+      "height": 70,
+      "data": {
+        "fill": null,
+        "stroke": "#000000",
+        "strokeWidth": 2
+      }
+    },
+    {
+      "id": "a7ocvht1h",
+      "type": "text",
+      "x": 194,
+      "y": 199,
+      "data": {
+        "content": "Logo",
+        "fontSize": 16,
+        "color": "#000000",
+        "bold": false
+      },
+      "width": 37,
+      "height": 21
+    },
+    {
+      "id": "5w2ueagb6",
+      "type": "text",
+      "x": 548,
+      "y": 200,
+      "data": {
+        "content": "Navigation bar",
+        "fontSize": 16,
+        "color": "#000000",
+        "bold": false
+      },
+      "width": 106,
+      "height": 21
+    }
+  ]
+}
