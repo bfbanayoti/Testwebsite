@@ -47,7 +47,6 @@ function Footer() {
                   Dubai, UAE
                 </span>
               </li>
-              <li className="footer__list-meta"><span>GMT +4 &middot; Working hours 9–6</span></li>
             </ul>
           </div>
 
@@ -85,7 +84,7 @@ function Footer() {
           <span>© 2025 Banayoti Consulting &middot; Dubai, UAE</span>
           <span className="footer__base-meta">
             <span className="footer__star" aria-hidden="true">✦</span>
-            banayoti.ae &middot; built with care in the UAE
+            BANAYOTI.ae &middot; built with care in the UAE
           </span>
         </div>
       </div>

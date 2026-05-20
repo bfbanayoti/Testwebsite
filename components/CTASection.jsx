@@ -18,7 +18,7 @@ function CTASection() {
             and automate their digital presence.
           </p>
           <div className="cta-card__row">
-            <a href="mailto:info@banayoti.com" className="hero-cta hero-cta--primary">
+            <a href="#contact-us" className="hero-cta hero-cta--primary" onClick={(e) => { e.preventDefault(); window.__handleNav && window.__handleNav("Contact Us"); }}>
               Request a Proposal
               <svg viewBox="0 0 14 14" fill="none">
                 <path d="M3 7h8M7.5 3.5 11 7l-3.5 3.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />

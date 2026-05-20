@@ -13,6 +13,7 @@ const PROJECTS = [
     quote: "A clean, conversion-focused website for a London-based logistics and supply chain company — built to communicate trust, speed, and nationwide reach.",
     tint: ["#1a8cff", "#0a3a8a"],
     aspect: "landscape",
+    frame: true,
   },
   {
     n: "02",
@@ -28,12 +29,13 @@ const PROJECTS = [
     n: "03",
     client: "Luxx Stairwell Chandeliers",
     sector: "Website development · Payment integration",
-    visual: "https://image.thum.io/get/width/1200/crop/750/noanimate/https://luxxstairwellchandeliers.co.uk/",
+    visual: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fluxxstairwellchandeliers.co.uk%2F?w=1200&h=750",
     url: "https://luxxstairwellchandeliers.co.uk/",
     cta: "Visit Website",
     quote: "A fully custom e-commerce experience for a luxury UK chandelier brand — complete product catalogue, variant selection, and end-to-end payment integration.",
     tint: ["#fcd34d", "#c4860a"],
     aspect: "landscape",
+    frame: true,
   },
   {
     n: "04",
@@ -123,7 +125,24 @@ const PROJECTS = [
   },
 ];
 
-function CaseStudy({ n, client, sector, visual, url, cta, quote, by, tint, aspect = "landscape" }) {
+function LaptopMockup({ src, onError }) {
+  return (
+    <div className="laptop-mock">
+      <div className="laptop-mock__lid">
+        <div className="laptop-mock__camera" />
+        <div className="laptop-mock__screen">
+          <img src={src} alt="" loading="lazy" referrerPolicy="no-referrer" onError={onError} />
+        </div>
+      </div>
+      <div className="laptop-mock__hinge" />
+      <div className="laptop-mock__base">
+        <div className="laptop-mock__notch" />
+      </div>
+    </div>
+  );
+}
+
+function CaseStudy({ n, client, sector, visual, url, cta, quote, by, tint, aspect = "landscape", frame = false }) {
   const [imgFailed, setImgFailed] = React.useState(false);
 
   return (
@@ -144,14 +163,18 @@ function CaseStudy({ n, client, sector, visual, url, cta, quote, by, tint, aspec
           ></div>
           <div className="case-row__visual-grid"></div>
           {visual && !imgFailed ? (
-            <img
-              src={visual}
-              alt=""
-              loading="lazy"
-              className="case-row__visual-img"
-              referrerPolicy="no-referrer"
-              onError={() => setImgFailed(true)}
-            />
+            frame ? (
+              <LaptopMockup src={visual} onError={() => setImgFailed(true)} />
+            ) : (
+              <img
+                src={visual}
+                alt=""
+                loading="lazy"
+                className="case-row__visual-img"
+                referrerPolicy="no-referrer"
+                onError={() => setImgFailed(true)}
+              />
+            )
           ) : (
             <span className="case-row__visual-mark">{client[0]}</span>
           )}
