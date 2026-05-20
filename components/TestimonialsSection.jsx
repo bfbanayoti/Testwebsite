@@ -80,6 +80,7 @@ function TestimonialsSection() {
           </h2>
         </div>
 
+        {/* Top row — featured masonry */}
         <div className="t-grid">
           <TestimonialCard {...TESTIMONIALS[0]} featured />
           <div className="t-col">
@@ -88,11 +89,11 @@ function TestimonialsSection() {
           </div>
           <TestimonialCard {...TESTIMONIALS[2]} />
         </div>
-        <div className="t-grid t-grid--row2">
+
+        {/* Bottom row — four equal cards */}
+        <div className="t-row">
           <TestimonialCard {...TESTIMONIALS[4]} />
           <TestimonialCard {...TESTIMONIALS[5]} />
-        </div>
-        <div className="t-grid t-grid--row2">
           <TestimonialCard {...TESTIMONIALS[6]} />
           <TestimonialCard {...TESTIMONIALS[7]} />
         </div>
