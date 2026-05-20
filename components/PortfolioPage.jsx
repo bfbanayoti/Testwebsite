@@ -5,6 +5,17 @@
 const PROJECTS = [
   {
     n: "01",
+    client: "Harvard Hearns Logistics",
+    sector: "Website development",
+    visual: "https://image.thum.io/get/width/1200/crop/750/noanimate/https://harvardhearns.com/",
+    url: "https://harvardhearns.com/",
+    cta: "Visit Website",
+    quote: "A clean, conversion-focused website for a London-based logistics and supply chain company — built to communicate trust, speed, and nationwide reach.",
+    tint: ["#1a8cff", "#0a3a8a"],
+    aspect: "landscape",
+  },
+  {
+    n: "02",
     client: "Tribus International",
     sector: "Website development",
     visual: "https://banayoti.com/wp-content/uploads/2025/11/Macbook-Laptop-Screen-Mockup-1-1.png",
@@ -14,7 +25,18 @@ const PROJECTS = [
     aspect: "landscape",
   },
   {
-    n: "02",
+    n: "03",
+    client: "Luxx Stairwell Chandeliers",
+    sector: "Website development · Payment integration",
+    visual: "https://image.thum.io/get/width/1200/crop/750/noanimate/https://luxxstairwellchandeliers.co.uk/",
+    url: "https://luxxstairwellchandeliers.co.uk/",
+    cta: "Visit Website",
+    quote: "A fully custom e-commerce experience for a luxury UK chandelier brand — complete product catalogue, variant selection, and end-to-end payment integration.",
+    tint: ["#fcd34d", "#c4860a"],
+    aspect: "landscape",
+  },
+  {
+    n: "04",
     client: "Excela Properties",
     sector: "Website development",
     visual: "https://banayoti.com/wp-content/uploads/2025/11/Macbook-Laptop-Screen-Mockup-1-1-1.png",
@@ -26,7 +48,7 @@ const PROJECTS = [
     aspect: "landscape",
   },
   {
-    n: "03",
+    n: "05",
     client: "INVICTUS Investment Company",
     sector: "Website development",
     visual: "https://banayoti.com/wp-content/uploads/2025/05/Macbook-Laptop-Screen-Mockup-2.png",
@@ -36,7 +58,7 @@ const PROJECTS = [
     aspect: "landscape",
   },
   {
-    n: "04",
+    n: "06",
     client: "GI Interiors",
     sector: "Website development",
     visual: "https://banayoti.com/wp-content/uploads/2025/05/Macbook-Laptop-Screen-Mockup.png",
@@ -48,7 +70,7 @@ const PROJECTS = [
     aspect: "landscape",
   },
   {
-    n: "05",
+    n: "07",
     client: "INVICTUS Trading",
     sector: "Website development",
     visual: "https://banayoti.com/wp-content/uploads/2025/06/d2713a9de67e16d6ed6a0335c242a57c63424d6c-e1748971532969.webp",
@@ -58,7 +80,7 @@ const PROJECTS = [
     aspect: "landscape",
   },
   {
-    n: "06",
+    n: "08",
     client: "Wista UAE",
     sector: "Website development",
     visual: "https://banayoti.com/wp-content/uploads/2025/06/Group-1707478734.png",
@@ -70,7 +92,7 @@ const PROJECTS = [
     aspect: "landscape",
   },
   {
-    n: "07",
+    n: "09",
     client: "Sip and Rise",
     sector: "Social media management",
     visual: "https://banayoti.com/wp-content/uploads/2025/05/Frame-3.png",
@@ -80,7 +102,7 @@ const PROJECTS = [
     aspect: "portrait",
   },
   {
-    n: "08",
+    n: "10",
     client: "Design 2000 (UK) Ltd",
     sector: "Website development",
     visual: "https://banayoti.com/wp-content/uploads/2025/05/Macbook-Laptop-Screen-Mockup-1.png",
@@ -90,7 +112,7 @@ const PROJECTS = [
     aspect: "landscape",
   },
   {
-    n: "09",
+    n: "11",
     client: "GI Interiors",
     sector: "Social media management",
     visual: null,
@@ -98,28 +120,6 @@ const PROJECTS = [
     cta: "Visit Page",
     tint: ["#a855f7", "#4b1f9a"],
     aspect: "portrait",
-  },
-  {
-    n: "10",
-    client: "Luxx Stairwell Chandeliers",
-    sector: "Website development · Payment integration",
-    visual: null,
-    url: "https://luxxstairwellchandeliers.co.uk/",
-    cta: "Visit Website",
-    quote: "A fully custom e-commerce experience for a luxury UK chandelier brand — complete product catalogue, variant selection, and end-to-end payment integration.",
-    tint: ["#fcd34d", "#c4860a"],
-    aspect: "landscape",
-  },
-  {
-    n: "11",
-    client: "Harvard Hearns Logistics",
-    sector: "Website development",
-    visual: null,
-    url: "https://harvardhearns.com/",
-    cta: "Visit Website",
-    quote: "A clean, conversion-focused website for a London-based logistics and supply chain company — built to communicate trust, speed, and nationwide reach.",
-    tint: ["#1a8cff", "#0a3a8a"],
-    aspect: "landscape",
   },
 ];
 
