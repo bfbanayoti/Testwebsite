@@ -29,7 +29,7 @@ const PROJECTS = [
     n: "03",
     client: "Luxx Stairwell Chandeliers",
     sector: "Website development · Payment integration",
-    visual: "https://image.thum.io/get/https://luxxstairwellchandeliers.co.uk/",
+    visual: "https://image.thum.io/get/width/1200/crop/750/noanimate/https://luxxstairwellchandeliers.co.uk/",
     url: "https://luxxstairwellchandeliers.co.uk/",
     cta: "Visit Website",
     quote: "A fully custom e-commerce experience for a luxury UK chandelier brand — complete product catalogue, variant selection, and end-to-end payment integration.",
