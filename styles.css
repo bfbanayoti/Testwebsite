@@ -1286,16 +1286,14 @@ main {
 }
 
 /* ─────────────── Testimonials ─────────────── */
-.t-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) minmax(0, 1.1fr);
-  gap: 18px;
-  align-items: start;
+.t-masonry {
+  columns: 3;
+  column-gap: 18px;
 }
-.t-col {
+.t-masonry .t-card {
+  break-inside: avoid;
+  margin-bottom: 18px;
   display: flex;
-  flex-direction: column;
-  gap: 18px;
 }
 .t-card {
   position: relative;
@@ -1381,19 +1379,11 @@ main {
   letter-spacing: 0.04em;
   margin-top: 2px;
 }
-.t-row {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-  align-items: start;
-  margin-top: 18px;
-}
 @media (max-width: 1000px) {
-  .t-grid { grid-template-columns: 1fr; }
-  .t-row { grid-template-columns: 1fr 1fr; }
+  .t-masonry { columns: 2; }
 }
 @media (max-width: 600px) {
-  .t-row { grid-template-columns: 1fr; }
+  .t-masonry { columns: 1; }
 }
 
 /* ─────────────── CTA ─────────────── */

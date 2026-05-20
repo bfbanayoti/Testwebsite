@@ -80,22 +80,10 @@ function TestimonialsSection() {
           </h2>
         </div>
 
-        {/* Top row — featured masonry */}
-        <div className="t-grid">
-          <TestimonialCard {...TESTIMONIALS[0]} featured />
-          <div className="t-col">
-            <TestimonialCard {...TESTIMONIALS[1]} />
-            <TestimonialCard {...TESTIMONIALS[3]} />
-          </div>
-          <TestimonialCard {...TESTIMONIALS[2]} />
-        </div>
-
-        {/* Bottom row — four equal cards */}
-        <div className="t-row">
-          <TestimonialCard {...TESTIMONIALS[4]} />
-          <TestimonialCard {...TESTIMONIALS[5]} />
-          <TestimonialCard {...TESTIMONIALS[6]} />
-          <TestimonialCard {...TESTIMONIALS[7]} />
+        <div className="t-masonry">
+          {TESTIMONIALS.map((t, i) => (
+            <TestimonialCard key={i} {...t} />
+          ))}
         </div>
       </div>
     </section>
