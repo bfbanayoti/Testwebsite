@@ -54,11 +54,11 @@ function Footer() {
           <div className="footer__col">
             <h4 className="footer__heading">Quick Links</h4>
             <ul className="footer__list">
-              <li><a href="https://banayoti.com">Home</a></li>
-              <li><a href="https://banayoti.com/about-us/">About Us</a></li>
-              <li><a href="https://banayoti.com/services/">Services</a></li>
+              <li><a href="#" onClick={(e) => { e.preventDefault(); window.__handleNav && window.__handleNav("Home"); }}>Home</a></li>
+              <li><a href="#about" onClick={(e) => { e.preventDefault(); window.__handleNav && window.__handleNav("About Us"); }}>About Us</a></li>
+              <li><a href="#services" onClick={(e) => { e.preventDefault(); window.__handleNav && window.__handleNav("Services"); }}>Services</a></li>
               <li><a href="#portfolio" onClick={(e) => { e.preventDefault(); window.__handleNav && window.__handleNav("Portfolio"); }}>Portfolio</a></li>
-              <li><a href="https://banayoti.com/contact-us/">Contact Us</a></li>
+              <li><a href="#contact" onClick={(e) => { e.preventDefault(); window.__handleNav && window.__handleNav("Contact"); }}>Contact Us</a></li>
             </ul>
           </div>
 
