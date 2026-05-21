@@ -16,7 +16,7 @@ const CLIENT_LOGOS = [
   { src: "https://banayoti.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-25-at-21.20.29_392fb4de-1.png",     alt: "Sip and Rise" },
   { src: "https://banayoti.com/wp-content/uploads/2025/05/Frame-2147226931-1.png",                                   alt: "INVICTUS" },
   { src: "https://banayoti.com/wp-content/uploads/2025/05/Frame-2147226932.png",                                     alt: "INVICTUS Trading" },
-  { src: "https://harvardhearns.com/wp-content/uploads/2026/04/cropped-Modern-bold-HHL-logo-design.png",             alt: "Harvard Hearns Logistics" },
+  { src: "https://harvardhearns.com/wp-content/uploads/2026/04/cropped-Modern-bold-HHL-logo-design.png",             alt: "Harvard Hearns Logistics", circle: true, bg: "#cc1e1e" },
   { src: "https://luxxstairwellchandeliers.co.uk/wp-content/uploads/2026/02/image-23-1.png",                         alt: "Luxx Stairwell Chandeliers" },
   { src: "https://tribus.ae/wp-content/uploads/2025/07/Website-Logo.svg",                                            alt: "Tribus International" },
   { text: "Excela", color: "#1a8cff" },
@@ -40,12 +40,15 @@ function MarqueeItem({ name, tint }) {
   );
 }
 
-function MarqueeLogoItem({ src, alt }) {
+function MarqueeLogoItem({ src, alt, circle, bg }) {
   const [failed, setFailed] = React.useState(false);
   if (failed) return null;
   return (
     <span className="marquee-item marquee-item--logo">
-      <span className="marquee-item__logo-chip">
+      <span
+        className={`marquee-item__logo-chip${circle ? " marquee-item__logo-chip--circle" : ""}`}
+        style={circle && bg ? { background: bg } : undefined}
+      >
         <img
           src={src}
           alt={alt || ""}

@@ -809,6 +809,13 @@ button { font: inherit; }
   border: none;
   box-shadow: none;
 }
+.marquee-item__logo-chip--circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  padding: 10px;
+  overflow: hidden;
+}
 .marquee-item__logo-img {
   height: 100%;
   width: auto;
