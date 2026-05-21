@@ -1487,16 +1487,9 @@ main {
 /* ─────────────── Footer ─────────────── */
 .site-footer {
   position: relative;
-  /* Start with the same off-white as the last section, fade to dark over 120 px.
-     No negative margin needed — matching the start colour hides the boundary. */
-  background: linear-gradient(to bottom,
-    #f8f8f6                          0px,
-    hsl(var(--bg-h) var(--bg-s) 3%) 120px,
-    hsl(var(--bg-h) var(--bg-s) 3%) 100%
-  );
+  background: hsl(var(--bg-h) var(--bg-s) 3%);
   border-top: none;
-  /* The 120-px top padding keeps content below the gradient zone */
-  padding: 120px max(24px, 4vw) 32px;
+  padding: 72px max(24px, 4vw) 32px;
 }
 .footer__grid {
   display: grid;
