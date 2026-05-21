@@ -19,6 +19,7 @@ const CLIENT_LOGOS = [
   { src: "https://harvardhearns.com/wp-content/uploads/2026/04/cropped-Modern-bold-HHL-logo-design.png",             alt: "Harvard Hearns Logistics" },
   { src: "https://luxxstairwellchandeliers.co.uk/wp-content/uploads/2026/02/image-23-1.png",                         alt: "Luxx Stairwell Chandeliers" },
   { src: "https://tribus.ae/wp-content/uploads/2025/07/Website-Logo.svg",                                            alt: "Tribus International" },
+  { text: "Excela", color: "#1a8cff" },
 ];
 
 function MarqueeItem({ name, tint }) {
@@ -72,7 +73,9 @@ function LogoMarquee() {
         <div className="marquee-track-wrap">
           <div className="marquee-track">
             {items.map((c, i) => (
-              <MarqueeLogoItem key={i} src={c.src} alt={c.alt} />
+              c.text
+                ? <span key={i} className="marquee-item marquee-item--text" style={{ color: c.color }}>{c.text}</span>
+                : <MarqueeLogoItem key={i} src={c.src} alt={c.alt} />
             ))}
           </div>
         </div>

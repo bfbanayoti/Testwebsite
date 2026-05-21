@@ -789,6 +789,16 @@ button { font: inherit; }
   display: inline-flex;
   align-items: center;
 }
+.marquee-item--text {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  padding: 0 48px;
+  white-space: nowrap;
+}
 .marquee-item__logo-chip {
   display: inline-flex;
   align-items: center;
