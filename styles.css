@@ -3574,6 +3574,9 @@ a.cp-info__link:hover .cp-info__value { color: var(--brand-blue); }
 .home-main .about__copy { color: #5a6276; }
 .home-main .link-cta    { color: #1a1f2e; border-color: #c8ccd8; }
 .home-main .link-cta:hover { color: var(--brand-blue); border-color: var(--brand-blue); }
+/* Offset right column so card top aligns with the "designed to grow" line */
+.home-main .about__visual { padding-top: 175px; }
+
 .home-main .about__visual-card {
   background: #ffffff;
   border: 1px solid #e8e8eb;
