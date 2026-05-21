@@ -1779,6 +1779,21 @@ main {
   max-width: 60ch;
   font-weight: 300;
 }
+.editorial__copy--wide {
+  max-width: 72ch;
+  margin-top: 20px;
+}
+/* Services intro paragraph */
+.svc-intro { padding-bottom: 0; }
+.svc-intro__text {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--hero-sub);
+  font-weight: 300;
+  max-width: 72ch;
+  margin: 0 auto;
+  text-align: center;
+}
 .editorial__head { margin-bottom: 40px; }
 .editorial__heading--sm { font-size: clamp(22px, 3vw, 32px); margin-top: 10px; }
 

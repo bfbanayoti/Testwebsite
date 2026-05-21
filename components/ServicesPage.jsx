@@ -1,12 +1,11 @@
-// ServicesPage.jsx — full content from banayoti.com/services
+// ServicesPage.jsx — full verbatim content from banayoti.com/services
 
 const SERVICES_DEEP = [
   {
     n: "01",
     title: "Website Development",
     tagline: "Your Digital Home, Built to Perform",
-    short: "Create fast, responsive, and SEO-optimised websites that turn visitors into customers.",
-    long: "We build custom sites — not template variations. Each project is scoped against your goals, your audience, and the metrics that matter to your business. From portfolios and corporate sites to full e-commerce platforms, we cover the full stack.",
+    desc: "We craft beautiful, responsive websites that aren't just pretty—they're built to convert. Whether you need a portfolio, corporate site, or a full e-commerce platform, we tailor every page to your brand and goals.",
     features: [
       "Custom Design & Development",
       "WordPress, Shopify & Custom Platforms",
@@ -22,11 +21,10 @@ const SERVICES_DEEP = [
     n: "02",
     title: "Branding & Creative Design",
     tagline: "A Brand That Looks as Good as It Feels.",
-    short: "We craft unforgettable brand identities with impact and clarity.",
-    long: "From positioning and naming through to logo, type, and visual systems — we develop cohesive brand identities that carry through every customer-facing touchpoint. We shape brands that look as confident as they want to feel.",
+    desc: "We help you craft a cohesive and memorable brand identity that resonates with your audience—from your logo to every visual element your customers see.",
     features: [
       "Logo Design & Brand Identity",
-      "Typography, Colour Palette & Style Guide",
+      "Typography, Color Palette & Style Guide",
       "Social Media Visual Systems",
       "Product Packaging & Print Design",
       "UI/UX Design for Websites & Apps",
@@ -38,8 +36,7 @@ const SERVICES_DEEP = [
     n: "03",
     title: "Digital Marketing",
     tagline: "Get Found. Get Clicked. Get Results.",
-    short: "Engage the right audience at the right time with full-funnel marketing strategies.",
-    long: "Data-driven and ROI-focused — our marketing strategies are executed creatively and connected to your CRM, reported against the outcomes you actually care about. Paid, organic, and lifecycle, all in one place.",
+    desc: "We help you reach the right people with the right message. Our marketing strategies are data-driven, ROI-focused, and creatively executed.",
     features: [
       "Social Media Management (Instagram, Facebook, TikTok, LinkedIn)",
       "Paid Advertising (Meta Ads, Google PPC, Retargeting)",
@@ -53,7 +50,7 @@ const SERVICES_DEEP = [
   },
 ];
 
-function ServiceRow({ n, title, tagline, short, long, features, tint, label, reverse }) {
+function ServiceRow({ n, title, tagline, desc, features, tint, label, reverse }) {
   return (
     <section className={`svc-row${reverse ? " svc-row--reverse" : ""}`} aria-labelledby={`svc-${n}`}>
       <div className="svc-row__inner section__inner">
@@ -74,8 +71,7 @@ function ServiceRow({ n, title, tagline, short, long, features, tint, label, rev
           <span className="svc-row__index">{n} &nbsp;/&nbsp; 03</span>
           <p className="svc-row__tagline">{tagline}</p>
           <h2 id={`svc-${n}`} className="svc-row__title">{title}</h2>
-          <p className="svc-row__short">{short}</p>
-          <p className="svc-row__long">{long}</p>
+          <p className="svc-row__short">{desc}</p>
           <ul className="svc-row__features">
             {features.map((f) => (
               <li key={f}>
@@ -103,6 +99,19 @@ function ServiceRow({ n, title, tagline, short, long, features, tint, label, rev
 function ServicesPage() {
   return (
     <React.Fragment>
+
+      {/* Intro */}
+      <section className="section svc-intro" aria-label="Services intro">
+        <div className="section__inner">
+          <p className="svc-intro__text">
+            At Banayoti Consulting, we offer a complete suite of services designed to help you
+            launch, grow, and automate your brand online. Whether you&rsquo;re starting from scratch
+            or scaling to the next level&mdash;we bring the strategy, creativity, and technology
+            to get you there.
+          </p>
+        </div>
+      </section>
+
       <div className="svc-rows">
         {SERVICES_DEEP.map((s, i) => (
           <ServiceRow key={s.n} {...s} reverse={i % 2 === 1} />
