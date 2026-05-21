@@ -63,7 +63,11 @@ function HeroContent({ headlineMode = "banayoti" }) {
             <path d="M3 7h8M7.5 3.5 11 7l-3.5 3.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </a>
-        <a href="#work" className="hero-cta">
+        <a
+          href="#portfolio"
+          className="hero-cta"
+          onClick={(e) => { e.preventDefault(); window.__handleNav && window.__handleNav("Portfolio"); }}
+        >
           See Our Work
           <svg viewBox="0 0 14 14" fill="none">
             <path d="M4 10 10 4M5 4h5v5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
