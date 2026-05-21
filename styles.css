@@ -2664,19 +2664,7 @@ a.cp-info__link:hover .cp-info__value { color: var(--brand-blue); }
    ═══════════════════════════════════════════════════════════════ */
 .al-page.cp-root {
   background: #f8f8f6;
-  overflow: visible; /* allow ::before to reach up past the boundary */
   color: #1a1f2e;
-}
-/* Fade-in from the dark PageHeader into the white form area */
-.al-page.cp-root::before {
-  content: "";
-  position: absolute;
-  top: -80px;
-  left: 0; right: 0;
-  height: 80px;
-  background: linear-gradient(to bottom, transparent, #f8f8f6);
-  pointer-events: none;
-  z-index: 0;
 }
 /* Soften ambient orbs for light bg */
 .al-page.cp-root .cp-orb--a {
