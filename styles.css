@@ -1488,8 +1488,20 @@ main {
 .site-footer {
   position: relative;
   background: hsl(var(--bg-h) var(--bg-s) 3%);
-  border-top: 0.5px solid rgba(255, 255, 255, 0.08);
+  border-top: none;
   padding: 72px max(24px, 4vw) 32px;
+}
+/* Fade from light page into dark footer */
+.site-footer::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to bottom, transparent, hsl(var(--bg-h) var(--bg-s) 3%));
+  pointer-events: none;
+  z-index: 0;
 }
 .footer__grid {
   display: grid;
@@ -3536,7 +3548,7 @@ a.cp-info__link:hover .cp-info__value { color: var(--brand-blue); }
 .home-main .cta-card::before { display: none; }
 .home-main .cta-card__title { color: #1a1f2e; }
 .home-main .cta-card__copy  { color: #5a6276; font-weight: 400; }
-.home-main .hero-cta--primary { background: #1a1f2e; color: #ffffff; border-color: #1a1f2e; }
+.home-main .hero-cta--primary { background: #1a1f2e; color: #ffffff !important; border-color: #1a1f2e; }
 .home-main .hero-cta--primary:hover { background: #2d3550; }
 .home-main .hero-cta { color: #1a1f2e; border-color: #d0d4de; }
 .home-main .hero-cta:hover { background: rgba(26,31,46,0.06); }
