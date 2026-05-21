@@ -208,8 +208,11 @@ function AboutPage() {
         </div>
       </section>
 
-      <TestimonialsSection />
-      <CTASection />
+      {/* Dark sections — restore dark brand background */}
+      <div className="al-dark-cap">
+        <TestimonialsSection />
+        <CTASection />
+      </div>
     </div>
   );
 }

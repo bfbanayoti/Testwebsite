@@ -3122,3 +3122,185 @@ a.cp-info__link:hover .cp-info__value { color: var(--brand-blue); }
   .al-values__grid { grid-template-columns: 1fr 1fr; }
   .al-inner { padding: 0 20px; }
 }
+
+/* ── Dark cap — restores dark bg for Testimonials / CTA / WhyChoose inside light pages ── */
+.al-dark-cap {
+  background: var(--bg);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SERVICES PAGE — Light Theme  (prefix: sl-)
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Intro ── */
+.sl-intro {
+  background: #ffffff;
+  padding: 100px 0 80px;
+  border-bottom: 1px solid #ebebeb;
+}
+.sl-intro__title {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(44px, 6.5vw, 76px);
+  font-weight: 400;
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+  color: #1a1f2e;
+  margin: 0 0 28px;
+  max-width: 760px;
+}
+.sl-intro__title em {
+  font-style: italic;
+  background: linear-gradient(135deg, #1a8cff, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.sl-intro__sub {
+  font-size: 16px;
+  line-height: 1.75;
+  color: #5a6276;
+  max-width: 680px;
+  margin: 0;
+}
+
+/* ── Service rows ── */
+.sl-rows {
+  background: #f8f8f6;
+  padding: 72px 0 80px;
+}
+.sl-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  padding: 56px 0;
+  border-bottom: 1px solid #ebebeb;
+}
+.sl-row:first-child { padding-top: 0; }
+.sl-row:last-child  { border-bottom: none; padding-bottom: 0; }
+.sl-row--reverse { direction: rtl; }
+.sl-row--reverse > * { direction: ltr; }
+
+/* Visual panel */
+.sl-row__visual {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: 20px;
+  border: 1px solid #e0e0e0;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 28px;
+}
+.sl-row__visual-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+.sl-row__visual-n {
+  position: absolute;
+  top: 24px;
+  left: 28px;
+  font-family: 'Instrument Serif', serif;
+  font-size: 13px;
+  font-style: italic;
+  color: rgba(0,0,0,0.3);
+  letter-spacing: 0.02em;
+}
+.sl-row__visual-label {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(52px, 8vw, 80px);
+  font-weight: 400;
+  font-style: italic;
+  color: rgba(0,0,0,0.12);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  position: relative;
+  z-index: 1;
+  user-select: none;
+}
+
+/* Body */
+.sl-row__tagline {
+  font-family: 'Instrument Serif', serif;
+  font-size: 15px;
+  font-style: italic;
+  color: #1a8cff;
+  margin: 0 0 10px;
+  letter-spacing: -0.01em;
+}
+.sl-row__title {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(26px, 3.5vw, 36px);
+  font-weight: 400;
+  color: #1a1f2e;
+  margin: 0 0 16px;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+.sl-row__desc {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #5a6276;
+  margin: 0 0 24px;
+}
+.sl-row__features {
+  list-style: none;
+  margin: 0 0 28px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.sl-row__features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13.5px;
+  color: #3d4256;
+  line-height: 1.5;
+}
+.sl-row__dot {
+  color: #1a8cff;
+  font-size: 10px;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+.sl-cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1f2e;
+  text-decoration: none;
+  padding: 11px 22px;
+  border-radius: 100px;
+  border: 1.5px solid #d8dae0;
+  background: #ffffff;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.sl-cta-link:hover {
+  background: #1a1f2e;
+  border-color: #1a1f2e;
+  color: #ffffff;
+}
+.sl-cta-link svg {
+  width: 14px; height: 14px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .sl-intro { padding: 64px 0 48px; }
+  .sl-row {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    direction: ltr;
+  }
+  .sl-row--reverse { direction: ltr; }
+  .sl-row__visual { aspect-ratio: 16 / 7; }
+}
