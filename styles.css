@@ -1487,19 +1487,16 @@ main {
 /* ─────────────── Footer ─────────────── */
 .site-footer {
   position: relative;
-  /* Pull footer up so its transparent top overlaps the light section above */
-  margin-top: -140px;
-  padding-top: 140px;
-  /* Fade: transparent at the very top → solid dark by 140 px in */
+  /* Start with the same off-white as the last section, fade to dark over 120 px.
+     No negative margin needed — matching the start colour hides the boundary. */
   background: linear-gradient(to bottom,
-    transparent                          0px,
-    hsl(var(--bg-h) var(--bg-s) 3%) 140px,
+    #f8f8f6                          0px,
+    hsl(var(--bg-h) var(--bg-s) 3%) 120px,
     hsl(var(--bg-h) var(--bg-s) 3%) 100%
   );
   border-top: none;
-  padding-right: max(24px, 4vw);
-  padding-bottom: 32px;
-  padding-left: max(24px, 4vw);
+  /* The 120-px top padding keeps content below the gradient zone */
+  padding: 120px max(24px, 4vw) 32px;
 }
 .footer__grid {
   display: grid;
@@ -3564,23 +3561,25 @@ a.cp-info__link:hover .cp-info__value { color: var(--brand-blue); }
    ═══════════════════════════════════════════════════════════════ */
 .home-main {
   position: relative;
-  /* Start at the EXACT hero bg colour so there is no visible seam,
-     then sweep through visible purples before easing out to white. */
+  /* Gradient lives entirely inside the about-section's 120 px top padding
+     so ALL text content renders on white.  Starts at the exact hero colour
+     (no seam) and reaches #f8f8f6 by 130 px. */
   background: linear-gradient(to bottom,
-    hsl(var(--bg-h) var(--bg-s) var(--bg-l)) 0px,
-    hsl(252 70% 10%)  40px,
-    hsl(254 60% 18%)  90px,
-    hsl(257 50% 32%) 160px,
-    hsl(259 40% 54%) 240px,
-    hsl(261 28% 76%) 320px,
-    hsl(262 16% 92%) 400px,
-    #f8f8f6          490px
+    hsl(var(--bg-h) var(--bg-s) var(--bg-l))  0px,
+    hsl(252 68% 16%)  36px,
+    hsl(255 56% 36%)  68px,
+    hsl(258 44% 62%)  98px,
+    #f8f8f6          130px
   );
 }
 /* Section head text */
 .home-main .section__title { color: #1a1f2e; }
-.home-main .section__eyebrow { color: #1a8cff; }
-.home-main .section__eyebrow-dot { background: #1a8cff; }
+.home-main .section__eyebrow {
+  color: #1a8cff;
+  background: rgba(26,140,255,0.08);
+  border-color: rgba(26,140,255,0.22);
+}
+.home-main .section__eyebrow-dot { background: #1a8cff; box-shadow: none; }
 .home-main .section__lede { color: #5a6276; }
 .home-main .section__title-grad {
   background: linear-gradient(135deg, #f59e0b, #a855f7);
