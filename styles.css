@@ -3601,14 +3601,27 @@ a.cp-info__link:hover .cp-info__value { color: var(--brand-blue); }
 }
 .home-main .stat-card__value { color: #1a1f2e; }
 .home-main .stat-card__label { color: #5a6276; }
-/* Service cards (home ServicesSection) */
-.home-main .svc-card {
+/* Service cards (home ServicesSection) — correct class is service-card, not svc-card */
+.home-main .service-card {
   background: #ffffff;
   border: 1px solid #e8e8eb;
+  backdrop-filter: none; -webkit-backdrop-filter: none;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
 }
-.home-main .svc-card__title { color: #1a1f2e; }
-.home-main .svc-card__body  { color: #5a6276; }
-.home-main .svc-card__icon  { color: #1a8cff; }
+.home-main .service-card:hover {
+  box-shadow: 0 8px 36px rgba(0,0,0,0.1);
+}
+.home-main .service-card::before { display: none; }
+.home-main .service-card__shine  { display: none; }
+.home-main .service-card__title  { color: #1a1f2e; }
+.home-main .service-card__body   { color: #5a6276; }
+.home-main .service-card__link   { color: #1a1f2e; }
+.home-main .service-card__link:hover { color: var(--brand-blue); }
+.home-main .service-card__icon {
+  background: rgba(26,140,255,0.07);
+  border-color: rgba(26,140,255,0.15);
+  color: #1a8cff;
+}
 /* Why cards */
 .home-main .why-card {
   background: #f7f8fc;
