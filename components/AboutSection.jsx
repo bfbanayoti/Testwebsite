@@ -5,19 +5,16 @@ function AboutSection() {
   return (
     <section className="section section--about" id="about" aria-labelledby="about-title">
       <div className="section__inner">
-        <div className="section__head">
-          <span className="section__eyebrow">
-            <span className="section__eyebrow-dot"></span>
-            Behind the Strategy
-          </span>
-          <h2 id="about-title" className="section__title">
-            Custom websites, smart marketing, and bold branding —<br />
-            <span className="section__title-grad">designed to grow with your brand.</span>
-          </h2>
-        </div>
-
         <div className="about__grid">
           <div className="about__body">
+            <span className="section__eyebrow" style={{ marginBottom: "20px", display: "inline-flex" }}>
+              <span className="section__eyebrow-dot"></span>
+              Behind the Strategy
+            </span>
+            <h2 id="about-title" className="section__title" style={{ marginBottom: "32px" }}>
+              Custom websites, smart marketing, and bold branding —<br />
+              <span className="section__title-grad">designed to grow with your brand.</span>
+            </h2>
             <p className="about__lede">
               Banayoti Consulting is a creative digital consultancy that partners with
               ambitious brands and businesses to unlock their full digital potential.

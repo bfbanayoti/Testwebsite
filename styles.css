@@ -996,7 +996,7 @@ main {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
   gap: 64px;
-  align-items: center;
+  align-items: start;
 }
 .about__lede {
   font-family: var(--display);
