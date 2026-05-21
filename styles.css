@@ -739,7 +739,7 @@ button { font: inherit; }
 .marquee-track {
   display: flex;
   align-items: center;
-  gap: 56px;
+  gap: 32px;
   width: max-content;
   animation: marquee-slide 32s linear infinite;
 }
@@ -809,11 +809,19 @@ button { font: inherit; }
   box-shadow: none;
 }
 .marquee-item__logo-chip--circle {
-  width: 56px;
-  height: 56px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  padding: 10px;
+  padding: 8px;
   overflow: hidden;
+  flex-shrink: 0;
+}
+.marquee-item__logo-chip--circle .marquee-item__logo-img {
+  mix-blend-mode: multiply;
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  object-fit: contain;
 }
 .marquee-item__logo-img {
   height: 40px;

@@ -78,7 +78,7 @@ function LogoMarquee() {
             {items.map((c, i) => (
               c.text
                 ? <span key={i} className="marquee-item marquee-item--text" style={{ color: c.color }}>{c.text}</span>
-                : <MarqueeLogoItem key={i} src={c.src} alt={c.alt} />
+                : <MarqueeLogoItem key={i} src={c.src} alt={c.alt} circle={c.circle} bg={c.bg} />
             ))}
           </div>
         </div>
