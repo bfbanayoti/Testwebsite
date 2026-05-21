@@ -99,14 +99,14 @@ function App() {
 
       <main>
         {view === "Home"      && (
-          <React.Fragment>
+          <div className="home-main">
             <AboutSection />
             <StatsSection />
             <ServicesSection />
             <WhyChooseSection />
             <TestimonialsSection />
             <CTASection />
-          </React.Fragment>
+          </div>
         )}
         {view === "About Us"   && <AboutPage />}
         {view === "Services"   && <ServicesPage />}

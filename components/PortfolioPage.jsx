@@ -226,13 +226,12 @@ function CaseStudy({ n, client, sector, desc, visual, url, cta, quote, by, tint,
 
 function PortfolioPage() {
   return (
-    <React.Fragment>
+    <div className="al-page">
       <div className="case-list">
         {PROJECTS.map((p) => <CaseStudy key={p.n} {...p} />)}
       </div>
-
       <CTASection />
-    </React.Fragment>
+    </div>
   );
 }
 
