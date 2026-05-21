@@ -64,7 +64,7 @@ function MarqueeLogoItem({ src, alt, circle, bg }) {
 
 function LogoMarquee() {
   // Use the real client logos from banayoti.com. Triple them for a smooth slide.
-  const items = [...CLIENT_LOGOS, ...CLIENT_LOGOS, ...CLIENT_LOGOS];
+  const items = [...CLIENT_LOGOS, ...CLIENT_LOGOS];
 
   return (
     <div className="marquee-wrap">

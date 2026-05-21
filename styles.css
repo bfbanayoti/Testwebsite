@@ -739,9 +739,9 @@ button { font: inherit; }
 .marquee-track {
   display: flex;
   align-items: center;
-  gap: 64px;
+  gap: 56px;
   width: max-content;
-  animation: marquee-slide 28s linear infinite;
+  animation: marquee-slide 32s linear infinite;
 }
 @keyframes marquee-slide {
   0%   { transform: translateX(0%); }
@@ -793,10 +793,9 @@ button { font: inherit; }
   display: inline-flex;
   align-items: center;
   font-family: var(--display);
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 600;
   letter-spacing: -0.02em;
-  padding: 0 48px;
   white-space: nowrap;
 }
 .marquee-item__logo-chip {
@@ -817,10 +816,9 @@ button { font: inherit; }
   overflow: hidden;
 }
 .marquee-item__logo-img {
-  height: 100%;
+  height: 40px;
   width: auto;
-  max-height: 50px;
-  max-width: 160px;
+  max-width: 140px;
   object-fit: contain;
   display: block;
   opacity: 0.95;
