@@ -788,6 +788,14 @@ button { font: inherit; }
   padding: 0;
   display: inline-flex;
   align-items: center;
+  text-decoration: none;
+}
+a.marquee-item--logo {
+  cursor: pointer;
+}
+a.marquee-item--logo:hover .marquee-item__logo-img {
+  opacity: 1;
+  transform: translateY(-2px);
 }
 .marquee-item--text {
   display: inline-flex;

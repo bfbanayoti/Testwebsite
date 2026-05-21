@@ -16,9 +16,9 @@ const CLIENT_LOGOS = [
   { src: "https://banayoti.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-25-at-21.20.29_392fb4de-1.png",     alt: "Sip and Rise" },
   { src: "https://banayoti.com/wp-content/uploads/2025/05/Frame-2147226931-1.png",                                   alt: "INVICTUS" },
   { src: "https://banayoti.com/wp-content/uploads/2025/05/Frame-2147226932.png",                                     alt: "INVICTUS Trading" },
-  { src: "https://harvardhearns.com/wp-content/uploads/2026/04/Modern-bold-HHL-logo-design.png", alt: "Harvard Hearns Logistics" },
-  { src: "https://luxxstairwellchandeliers.co.uk/wp-content/uploads/2026/02/image-23-1.png",                         alt: "Luxx Stairwell Chandeliers" },
-  { src: "https://tribus.ae/wp-content/uploads/2025/07/Website-Logo.svg",                                            alt: "Tribus International" },
+  { src: "https://harvardhearns.com/wp-content/uploads/2026/04/Modern-bold-HHL-logo-design.png", alt: "Harvard Hearns Logistics", url: "https://harvardhearns.com" },
+  { src: "https://luxxstairwellchandeliers.co.uk/wp-content/uploads/2026/02/image-23-1.png",                         alt: "Luxx Stairwell Chandeliers", url: "https://luxxstairwellchandeliers.co.uk" },
+  { src: "https://tribus.ae/wp-content/uploads/2025/07/Website-Logo.svg",                                            alt: "Tribus International", url: "https://tribus.ae" },
   { text: "Excela", color: "#1a8cff" },
 ];
 
@@ -40,11 +40,13 @@ function MarqueeItem({ name, tint }) {
   );
 }
 
-function MarqueeLogoItem({ src, alt, circle, bg }) {
+function MarqueeLogoItem({ src, alt, circle, bg, url }) {
   const [failed, setFailed] = React.useState(false);
   if (failed) return null;
+  const Wrap = url ? "a" : "span";
+  const wrapProps = url ? { href: url, target: "_blank", rel: "noopener noreferrer", "aria-label": alt } : {};
   return (
-    <span className="marquee-item marquee-item--logo">
+    <Wrap className="marquee-item marquee-item--logo" {...wrapProps}>
       <span
         className={`marquee-item__logo-chip${circle ? " marquee-item__logo-chip--circle" : ""}`}
         style={circle && bg ? { background: bg } : undefined}
@@ -58,7 +60,7 @@ function MarqueeLogoItem({ src, alt, circle, bg }) {
           onError={() => setFailed(true)}
         />
       </span>
-    </span>
+    </Wrap>
   );
 }
 
