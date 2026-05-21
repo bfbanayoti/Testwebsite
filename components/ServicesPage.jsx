@@ -144,10 +144,8 @@ function ServicesPage() {
         </div>
       </section>
 
-      <div className="al-dark-cap">
-        <WhyChooseSection />
-        <CTASection />
-      </div>
+      <WhyChooseSection />
+      <CTASection />
     </div>
   );
 }
