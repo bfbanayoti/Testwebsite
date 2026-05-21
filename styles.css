@@ -897,10 +897,10 @@ main {
 
 .section {
   position: relative;
-  padding: 120px max(24px, 4vw);
+  padding: 88px max(24px, 4vw);
   isolation: isolate;
 }
-.section + .section { padding-top: 60px; }
+.section + .section { padding-top: 44px; }
 .section__inner {
   width: min(1240px, 100%);
   margin: 0 auto;
@@ -909,8 +909,8 @@ main {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 18px;
-  margin-bottom: 56px;
+  gap: 14px;
+  margin-bottom: 44px;
   max-width: 880px;
 }
 .section__head--center {
@@ -995,7 +995,7 @@ main {
 .about__grid {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-  gap: 64px;
+  gap: 52px;
   align-items: start;
 }
 .about__lede {
@@ -1102,13 +1102,13 @@ main {
 
 /* ─────────────── Stats ─────────────── */
 .section--stats {
-  padding-top: 60px;
+  padding-top: 44px;
 }
 .stats__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  margin-top: 64px;
+  gap: 16px;
+  margin-top: 44px;
 }
 .stat-card {
   position: relative;
@@ -1168,8 +1168,8 @@ main {
 .services__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  margin-top: 24px;
+  gap: 16px;
+  margin-top: 16px;
 }
 .service-card {
   position: relative;
@@ -1273,7 +1273,7 @@ main {
 .why__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
+  gap: 16px;
 }
 .why-card {
   position: relative;
@@ -1321,11 +1321,11 @@ main {
 /* ─────────────── Testimonials ─────────────── */
 .t-masonry {
   columns: 3;
-  column-gap: 18px;
+  column-gap: 16px;
 }
 .t-masonry .t-card {
   break-inside: avoid;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   display: flex;
 }
 .t-card {
@@ -1420,10 +1420,10 @@ main {
 }
 
 /* ─────────────── CTA ─────────────── */
-.section--cta { padding-top: 60px; padding-bottom: 80px; }
+.section--cta { padding-top: 44px; padding-bottom: 64px; }
 .cta-card {
   position: relative;
-  padding: 72px clamp(32px, 5vw, 80px);
+  padding: 56px clamp(32px, 5vw, 72px);
   border-radius: 32px;
   background: rgba(255, 255, 255, 0.04);
   border: 0.5px solid rgba(255, 255, 255, 0.14);
@@ -1458,7 +1458,7 @@ main {
   filter: blur(60px);
   z-index: -1;
 }
-.cta-card__eyebrow { margin-bottom: 22px; }
+.cta-card__eyebrow { margin-bottom: 16px; }
 .cta-card__title {
   font-family: var(--display);
   font-weight: 400;
@@ -1474,7 +1474,7 @@ main {
   line-height: 1.6;
   color: var(--hero-sub);
   max-width: 580px;
-  margin: 0 auto 36px;
+  margin: 0 auto 28px;
   font-weight: 300;
 }
 .cta-card__row {
