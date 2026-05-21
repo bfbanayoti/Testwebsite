@@ -3364,6 +3364,100 @@ a.cp-info__link:hover .cp-info__value { color: var(--brand-blue); }
   width: 14px; height: 14px;
 }
 
+/* ── Animated icon inside visual panel ── */
+.sl-row__icon-wrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  pointer-events: none;
+}
+.sl-icon {
+  width: 52%;
+  max-width: 180px;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+/* ── Inline CTA section ── */
+.sl-cta-section {
+  background: #ffffff;
+  padding: 80px 0 100px;
+  border-top: 1px solid #ebebeb;
+}
+.sl-cta-card {
+  background: #f4f6ff;
+  border: 1px solid #dde3f8;
+  border-radius: 28px;
+  padding: 72px clamp(32px, 6vw, 96px);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.sl-cta-card::before {
+  content: "";
+  position: absolute;
+  width: 60%; height: 50%;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(ellipse, rgba(99,102,241,0.08), transparent 70%);
+  pointer-events: none;
+}
+.sl-cta-card__title {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(34px, 5vw, 58px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: #1a1f2e;
+  margin: 12px 0 18px;
+}
+.sl-cta-card__title em {
+  font-style: italic;
+  background: linear-gradient(135deg, #1a8cff, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.sl-cta-card__copy {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #5a6276;
+  max-width: 520px;
+  margin: 0 auto 36px;
+}
+.sl-cta-card__row {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.sl-cta-card__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 26px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1.5px solid #d0d4de;
+  color: #1a1f2e;
+  background: #ffffff;
+  transition: all 0.2s;
+}
+.sl-cta-card__btn:hover { background: #f0f2f8; }
+.sl-cta-card__btn--primary {
+  background: #1a1f2e;
+  color: #ffffff;
+  border-color: #1a1f2e;
+}
+.sl-cta-card__btn--primary:hover { background: #2d3550; border-color: #2d3550; }
+.sl-cta-card__btn svg { width: 14px; height: 14px; }
+
 /* ── Responsive ── */
 @media (max-width: 768px) {
   .sl-intro { padding: 64px 0 48px; }
@@ -3374,4 +3468,5 @@ a.cp-info__link:hover .cp-info__value { color: var(--brand-blue); }
   }
   .sl-row--reverse { direction: ltr; }
   .sl-row__visual { aspect-ratio: 16 / 7; }
+  .sl-icon { width: 40%; }
 }
