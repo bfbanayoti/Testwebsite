@@ -1487,21 +1487,19 @@ main {
 /* ─────────────── Footer ─────────────── */
 .site-footer {
   position: relative;
-  background: hsl(var(--bg-h) var(--bg-s) 3%);
+  /* Pull footer up so its transparent top overlaps the light section above */
+  margin-top: -140px;
+  padding-top: 140px;
+  /* Fade: transparent at the very top → solid dark by 140 px in */
+  background: linear-gradient(to bottom,
+    transparent                          0px,
+    hsl(var(--bg-h) var(--bg-s) 3%) 140px,
+    hsl(var(--bg-h) var(--bg-s) 3%) 100%
+  );
   border-top: none;
-  padding: 72px max(24px, 4vw) 32px;
-}
-/* Fade from light page into dark footer */
-.site-footer::before {
-  content: "";
-  position: absolute;
-  top: -100px;
-  left: 0;
-  right: 0;
-  height: 100px;
-  background: linear-gradient(to bottom, transparent, hsl(var(--bg-h) var(--bg-s) 3%));
-  pointer-events: none;
-  z-index: 0;
+  padding-right: max(24px, 4vw);
+  padding-bottom: 32px;
+  padding-left: max(24px, 4vw);
 }
 .footer__grid {
   display: grid;
@@ -3275,11 +3273,14 @@ a.cp-info__link:hover .cp-info__value { color: var(--brand-blue); }
 .al-page .cta-card__copy { color: #5a6276; font-weight: 400; }
 /* Keep primary CTA button dark for contrast */
 .al-page .hero-cta--primary {
-  background: #1a1f2e;
-  color: #ffffff;
-  border-color: #1a1f2e;
+  background: linear-gradient(135deg, #1a8cff, #6366f1);
+  color: #ffffff !important;
+  border-color: transparent;
 }
-.al-page .hero-cta--primary:hover { background: #2d3550; border-color: #2d3550; }
+.al-page .hero-cta--primary:hover {
+  background: linear-gradient(135deg, #0a7aff, #5254e0);
+  border-color: transparent;
+}
 .al-page .hero-cta {
   color: #1a1f2e;
   border-color: #d0d4de;
@@ -3563,15 +3564,17 @@ a.cp-info__link:hover .cp-info__value { color: var(--brand-blue); }
    ═══════════════════════════════════════════════════════════════ */
 .home-main {
   position: relative;
-  /* Purple → white fade.  Spans ~460 px so the hero blends smoothly into the light sections. */
+  /* Start at the EXACT hero bg colour so there is no visible seam,
+     then sweep through visible purples before easing out to white. */
   background: linear-gradient(to bottom,
-    hsl(252 72% 8%)  0px,
-    hsl(254 60% 16%) 70px,
-    hsl(257 50% 30%) 140px,
-    hsl(259 40% 52%) 220px,
-    hsl(261 28% 76%) 300px,
-    hsl(262 16% 92%) 380px,
-    #f8f8f6          460px
+    hsl(var(--bg-h) var(--bg-s) var(--bg-l)) 0px,
+    hsl(252 70% 10%)  40px,
+    hsl(254 60% 18%)  90px,
+    hsl(257 50% 32%) 160px,
+    hsl(259 40% 54%) 240px,
+    hsl(261 28% 76%) 320px,
+    hsl(262 16% 92%) 400px,
+    #f8f8f6          490px
   );
 }
 /* Section head text */
@@ -3582,6 +3585,30 @@ a.cp-info__link:hover .cp-info__value { color: var(--brand-blue); }
 .home-main .section__title-grad {
   background: linear-gradient(135deg, #f59e0b, #a855f7);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+/* About section (AboutSection on home page) */
+.home-main .about__lede { color: #1a1f2e; }
+.home-main .about__copy { color: #5a6276; }
+.home-main .link-cta    { color: #1a1f2e; border-color: #c8ccd8; }
+.home-main .link-cta:hover { color: var(--brand-blue); border-color: var(--brand-blue); }
+.home-main .about__visual-card {
+  background: #ffffff;
+  border: 1px solid #e8e8eb;
+  backdrop-filter: none; -webkit-backdrop-filter: none;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+}
+.home-main .about__visual-card::before { display: none; }
+.home-main .about__visual-row {
+  color: #1a1f2e;
+  border-bottom-color: #ebebeb;
+}
+.home-main .about__visual-row span:last-child { color: #9aa0b2; }
+.home-main .about__visual-row .dots {
+  background-image: linear-gradient(90deg, #d0d4de 0 4px, transparent 4px 8px);
+}
+.home-main .about__visual-tag {
+  color: #9aa0b2;
+  border-top-color: #ebebeb;
 }
 /* Stat cards */
 .home-main .stat-card {
@@ -3631,8 +3658,15 @@ a.cp-info__link:hover .cp-info__value { color: var(--brand-blue); }
 .home-main .cta-card::before { display: none; }
 .home-main .cta-card__title { color: #1a1f2e; }
 .home-main .cta-card__copy  { color: #5a6276; font-weight: 400; }
-.home-main .hero-cta--primary { background: #1a1f2e; color: #ffffff !important; border-color: #1a1f2e; }
-.home-main .hero-cta--primary:hover { background: #2d3550; }
+.home-main .hero-cta--primary {
+  background: linear-gradient(135deg, #1a8cff, #6366f1);
+  color: #ffffff !important;
+  border-color: transparent;
+}
+.home-main .hero-cta--primary:hover {
+  background: linear-gradient(135deg, #0a7aff, #5254e0);
+  border-color: transparent;
+}
 .home-main .hero-cta { color: #1a1f2e; border-color: #d0d4de; }
 .home-main .hero-cta:hover { background: rgba(26,31,46,0.06); }
 
