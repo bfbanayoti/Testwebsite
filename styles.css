@@ -798,20 +798,6 @@ button { font: inherit; }
   letter-spacing: -0.02em;
   white-space: nowrap;
 }
-.marquee-item--badge {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--display);
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  flex-shrink: 0;
-  white-space: nowrap;
-}
 .marquee-item__logo-chip {
   display: inline-flex;
   align-items: center;
@@ -826,6 +812,7 @@ button { font: inherit; }
   width: 52px;
   height: 52px;
   border-radius: 50%;
+  clip-path: circle(50%);
   padding: 8px;
   overflow: hidden;
   flex-shrink: 0;
@@ -836,6 +823,7 @@ button { font: inherit; }
   width: 100%;
   max-width: 100%;
   object-fit: contain;
+  opacity: 1;
 }
 .marquee-item__logo-img {
   height: 40px;

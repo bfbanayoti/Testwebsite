@@ -16,7 +16,7 @@ const CLIENT_LOGOS = [
   { src: "https://banayoti.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-25-at-21.20.29_392fb4de-1.png",     alt: "Sip and Rise" },
   { src: "https://banayoti.com/wp-content/uploads/2025/05/Frame-2147226931-1.png",                                   alt: "INVICTUS" },
   { src: "https://banayoti.com/wp-content/uploads/2025/05/Frame-2147226932.png",                                     alt: "INVICTUS Trading" },
-  { badge: "HHL", bg: "#cc1e1e", color: "#fff", alt: "Harvard Hearns Logistics" },
+  { src: "https://harvardhearns.com/wp-content/uploads/2026/04/cropped-Modern-bold-HHL-logo-design.png", alt: "Harvard Hearns Logistics", circle: true, bg: "#cc1e1e" },
   { src: "https://luxxstairwellchandeliers.co.uk/wp-content/uploads/2026/02/image-23-1.png",                         alt: "Luxx Stairwell Chandeliers" },
   { src: "https://tribus.ae/wp-content/uploads/2025/07/Website-Logo.svg",                                            alt: "Tribus International" },
   { text: "Excela", color: "#1a8cff" },
@@ -76,11 +76,9 @@ function LogoMarquee() {
         <div className="marquee-track-wrap">
           <div className="marquee-track">
             {items.map((c, i) => (
-              c.badge
-                ? <span key={i} className="marquee-item marquee-item--badge" style={{ background: c.bg, color: c.color }} aria-label={c.alt}>{c.badge}</span>
-                : c.text
-                  ? <span key={i} className="marquee-item marquee-item--text" style={{ color: c.color }}>{c.text}</span>
-                  : <MarqueeLogoItem key={i} src={c.src} alt={c.alt} circle={c.circle} bg={c.bg} />
+              c.text
+                ? <span key={i} className="marquee-item marquee-item--text" style={{ color: c.color }}>{c.text}</span>
+                : <MarqueeLogoItem key={i} src={c.src} alt={c.alt} circle={c.circle} bg={c.bg} />
             ))}
           </div>
         </div>
