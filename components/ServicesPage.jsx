@@ -11,40 +11,70 @@ const SL_WHY = [
 
 function IconWebsite({ color }) {
   return (
-    <svg viewBox="0 0 260 180" className="sl-icon" aria-hidden="true">
-      {/* Browser shell */}
-      <rect x="2" y="2" width="256" height="176" rx="14" fill={color} fillOpacity="0.07" stroke={color} strokeWidth="1.5" strokeOpacity="0.35"/>
+    <svg viewBox="0 0 280 248" className="sl-icon" aria-hidden="true">
+
+      {/* ── Wireframe globe (top-right, background layer) ── */}
+      <g transform="translate(206,72)">
+        {/* Sphere */}
+        <circle r="62" fill={color} fillOpacity="0.06" stroke={color} strokeWidth="1" strokeOpacity="0.22"/>
+        {/* Latitude rings */}
+        <ellipse rx="62" ry="12"  fill="none" stroke={color} strokeWidth="0.8" strokeOpacity="0.18"/>
+        <ellipse rx="52" ry="10" cy="-24" fill="none" stroke={color} strokeWidth="0.7" strokeOpacity="0.13"/>
+        <ellipse rx="52" ry="10" cy="24"  fill="none" stroke={color} strokeWidth="0.7" strokeOpacity="0.13"/>
+        <ellipse rx="32" ry="6"  cy="-46" fill="none" stroke={color} strokeWidth="0.6" strokeOpacity="0.09"/>
+        <ellipse rx="32" ry="6"  cy="46"  fill="none" stroke={color} strokeWidth="0.6" strokeOpacity="0.09"/>
+        {/* Rotating longitude lines */}
+        <g>
+          <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="16s" repeatCount="indefinite"/>
+          <ellipse rx="9"  ry="62" fill="none" stroke={color} strokeWidth="0.8" strokeOpacity="0.28"/>
+          <ellipse rx="48" ry="62" fill="none" stroke={color} strokeWidth="0.6" strokeOpacity="0.18"/>
+        </g>
+        {/* City dots with pulse */}
+        <circle cx="20" cy="-16" r="3" fill={color} fillOpacity="0.85">
+          <animate attributeName="fill-opacity" values="0.85;1;0.85" dur="2.4s" repeatCount="indefinite"/>
+          <animate attributeName="r"            values="3;4.2;3"     dur="2.4s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="-24" cy="9"  r="2.5" fill={color} fillOpacity="0.65">
+          <animate attributeName="fill-opacity" values="0.65;1;0.65" dur="3.1s" begin="0.9s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="12"  cy="30" r="2.5" fill={color} fillOpacity="0.65">
+          <animate attributeName="fill-opacity" values="0.65;1;0.65" dur="2.9s" begin="1.6s" repeatCount="indefinite"/>
+        </circle>
+        {/* Connection arcs */}
+        <line x1="20"  y1="-16" x2="-24" y2="9"  stroke={color} strokeWidth="0.9" strokeOpacity="0.38" strokeDasharray="3 2"/>
+        <line x1="-24" y1="9"   x2="12"  y2="30" stroke={color} strokeWidth="0.9" strokeOpacity="0.38" strokeDasharray="3 2"/>
+      </g>
+
+      {/* ── Browser window (lower area, foreground) ── */}
+      <rect x="4" y="118" width="228" height="122" rx="13" fill={color} fillOpacity="0.08" stroke={color} strokeWidth="1.5" strokeOpacity="0.35"/>
       {/* Top bar */}
-      <rect x="2" y="2" width="256" height="32" rx="14" fill={color} fillOpacity="0.1"/>
-      <rect x="2" y="16" width="256" height="18" fill={color} fillOpacity="0.1"/>
+      <rect x="4" y="118" width="228" height="30" rx="13" fill={color} fillOpacity="0.1"/>
+      <rect x="4" y="133" width="228" height="15" fill={color} fillOpacity="0.1"/>
       {/* Traffic lights */}
-      <circle cx="20" cy="18" r="5" fill={color} fillOpacity="0.5"/>
-      <circle cx="34" cy="18" r="5" fill={color} fillOpacity="0.5"/>
-      <circle cx="48" cy="18" r="5" fill={color} fillOpacity="0.5"/>
+      <circle cx="20" cy="133" r="4.5" fill={color} fillOpacity="0.5"/>
+      <circle cx="33" cy="133" r="4.5" fill={color} fillOpacity="0.5"/>
+      <circle cx="46" cy="133" r="4.5" fill={color} fillOpacity="0.5"/>
       {/* URL bar */}
-      <rect x="66" y="10" width="130" height="16" rx="8" fill={color} fillOpacity="0.12"/>
+      <rect x="62" y="124" width="114" height="14" rx="7" fill={color} fillOpacity="0.12"/>
       {/* Hero image block */}
-      <rect x="12" y="42" width="232" height="72" rx="8" fill={color} fillOpacity="0.1">
+      <rect x="12" y="154" width="212" height="50" rx="7" fill={color} fillOpacity="0.1">
         <animate attributeName="fill-opacity" values="0.05;0.18;0.05" dur="2.8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1"/>
       </rect>
-      {/* Play button in hero */}
-      <circle cx="128" cy="78" r="18" fill={color} fillOpacity="0.18"/>
-      <polygon points="122,70 122,86 140,78" fill={color} fillOpacity="0.5">
+      {/* Play button */}
+      <circle cx="118" cy="179" r="15" fill={color} fillOpacity="0.18"/>
+      <polygon points="112,171 112,187 128,179" fill={color} fillOpacity="0.5">
         <animate attributeName="fill-opacity" values="0.5;0.9;0.5" dur="2.8s" repeatCount="indefinite"/>
       </polygon>
-      {/* Headline bar */}
-      <rect x="12" y="124" height="10" rx="5" fill={color} fillOpacity="0.55">
-        <animate attributeName="width" values="0;160;160;0" dur="3.5s" repeatCount="indefinite" keyTimes="0;0.3;0.7;1" calcMode="spline" keySplines="0.4 0 0.2 1;0 0 1 1;0.4 0 0.2 1"/>
+      {/* Typing headline */}
+      <rect x="12" y="211" height="9" rx="4.5" fill={color} fillOpacity="0.55">
+        <animate attributeName="width" values="0;148;148;0" dur="3.5s" repeatCount="indefinite" keyTimes="0;0.3;0.7;1" calcMode="spline" keySplines="0.4 0 0.2 1;0 0 1 1;0.4 0 0.2 1"/>
       </rect>
-      {/* Sub lines */}
-      <rect x="12" y="142" height="7" rx="3.5" fill={color} fillOpacity="0.3">
-        <animate attributeName="width" values="0;220;220;0" dur="3.5s" begin="0.2s" repeatCount="indefinite" keyTimes="0;0.3;0.7;1" calcMode="spline" keySplines="0.4 0 0.2 1;0 0 1 1;0.4 0 0.2 1"/>
-      </rect>
-      <rect x="12" y="157" height="7" rx="3.5" fill={color} fillOpacity="0.2">
-        <animate attributeName="width" values="0;170;170;0" dur="3.5s" begin="0.4s" repeatCount="indefinite" keyTimes="0;0.3;0.7;1" calcMode="spline" keySplines="0.4 0 0.2 1;0 0 1 1;0.4 0 0.2 1"/>
+      {/* Sub line */}
+      <rect x="12" y="226" height="7" rx="3.5" fill={color} fillOpacity="0.28">
+        <animate attributeName="width" values="0;200;200;0" dur="3.5s" begin="0.25s" repeatCount="indefinite" keyTimes="0;0.3;0.7;1" calcMode="spline" keySplines="0.4 0 0.2 1;0 0 1 1;0.4 0 0.2 1"/>
       </rect>
       {/* Cursor blink */}
-      <rect x="174" y="121" width="2.5" height="14" rx="1.25" fill={color} fillOpacity="0.8">
+      <rect x="163" y="208" width="2.5" height="13" rx="1.25" fill={color} fillOpacity="0.8">
         <animate attributeName="opacity" values="1;0;1" dur="1.1s" repeatCount="indefinite"/>
       </rect>
     </svg>

@@ -2670,6 +2670,81 @@ a.cp-info__link:hover .cp-info__value { color: var(--brand-blue); }
   line-height: 1.6;
 }
 
+/* ═══════════════════════════════════════════════════════════════
+   CONTACT PAGE — light-theme overrides (.al-page.cp-root)
+   Fades from the dark PageHeader into white, then back to dark footer.
+   ═══════════════════════════════════════════════════════════════ */
+.al-page.cp-root {
+  background: #f8f8f6;
+  overflow: visible; /* allow ::before to reach up past the boundary */
+  color: #1a1f2e;
+}
+/* Fade-in from the dark PageHeader into the white form area */
+.al-page.cp-root::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  left: 0; right: 0;
+  height: 80px;
+  background: linear-gradient(to bottom, transparent, #f8f8f6);
+  pointer-events: none;
+  z-index: 0;
+}
+/* Soften ambient orbs for light bg */
+.al-page.cp-root .cp-orb--a {
+  background: radial-gradient(circle, rgba(99,102,241,0.08) 0%, transparent 70%);
+  filter: blur(80px);
+}
+.al-page.cp-root .cp-orb--b {
+  background: radial-gradient(circle, rgba(26,140,255,0.06) 0%, transparent 70%);
+  filter: blur(80px);
+}
+/* Glass cards → white cards */
+.al-page.cp-root .cp-glass {
+  background: #ffffff;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 1px solid #e8e8eb;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+}
+.al-page.cp-root .cp-glass__top-line {
+  background: linear-gradient(90deg, transparent, rgba(99,102,241,0.25) 50%, transparent);
+}
+/* Info panel text */
+.al-page.cp-root .cp-panel__intro { color: #5a6276; }
+.al-page.cp-root .cp-info__label  { color: #9aa0b2; }
+.al-page.cp-root .cp-info__value  { color: #1a1f2e; }
+.al-page.cp-root .cp-info__icon   { color: #5a6276; background: #f0f1f5; border-color: transparent; }
+.al-page.cp-root .cp-info__link:hover .cp-info__value { color: var(--brand-blue); }
+.al-page.cp-root .cp-panel__divider { background: #ebebeb; }
+.al-page.cp-root .cp-socials__label { color: #9aa0b2; }
+.al-page.cp-root .cp-social-btn {
+  background: #f4f5f8;
+  border-color: #e0e2e8;
+  color: #3a4060;
+}
+.al-page.cp-root .cp-social-btn:hover { background: #eef0f8; border-color: #c7cbdc; }
+/* Form */
+.al-page.cp-root .cp-field__label { color: #4a5070; }
+.al-page.cp-root .cp-required      { color: #e0455a; }
+.al-page.cp-root .cp-optional      { color: #9aa0b2; }
+.al-page.cp-root .cp-field__input {
+  background: #f5f6fa;
+  border: 1px solid #d8dae6;
+  color: #1a1f2e;
+}
+.al-page.cp-root .cp-field__input::placeholder { color: #aab0c4; }
+.al-page.cp-root .cp-field__input:focus {
+  border-color: var(--brand-blue);
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(26,140,255,0.12);
+}
+.al-page.cp-root .cp-form__error { color: #c0392b; background: #fff0f0; border-color: #f5c6cb; }
+/* Submit button stays blue gradient */
+/* Sent state */
+.al-page.cp-root .cp-sent__title { color: #1a1f2e; }
+.al-page.cp-root .cp-sent__sub   { color: #5a6276; }
+
 /* ═══════════════════════════════════════════
    LAPTOP MOCKUP (portfolio live screenshots)
 ═══════════════════════════════════════════ */
@@ -3488,8 +3563,16 @@ a.cp-info__link:hover .cp-info__value { color: var(--brand-blue); }
    ═══════════════════════════════════════════════════════════════ */
 .home-main {
   position: relative;
-  /* Fade from the dark hero colour into the light page */
-  background: linear-gradient(to bottom, hsl(var(--bg-h) var(--bg-s) var(--bg-l)) 0px, #f8f8f6 110px);
+  /* Purple → white fade.  Spans ~460 px so the hero blends smoothly into the light sections. */
+  background: linear-gradient(to bottom,
+    hsl(252 72% 8%)  0px,
+    hsl(254 60% 16%) 70px,
+    hsl(257 50% 30%) 140px,
+    hsl(259 40% 52%) 220px,
+    hsl(261 28% 76%) 300px,
+    hsl(262 16% 92%) 380px,
+    #f8f8f6          460px
+  );
 }
 /* Section head text */
 .home-main .section__title { color: #1a1f2e; }

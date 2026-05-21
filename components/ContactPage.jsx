@@ -46,7 +46,7 @@ function ContactPage() {
   };
 
   return (
-    <div className="cp-root">
+    <div className="al-page cp-root">
 
       {/* ── Ambient glow orbs ── */}
       <div className="cp-orb cp-orb--a" aria-hidden="true" />
