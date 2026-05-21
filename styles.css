@@ -739,9 +739,9 @@ button { font: inherit; }
 .marquee-track {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 56px;
   width: max-content;
-  animation: marquee-slide 32s linear infinite;
+  animation: marquee-slide 24s linear infinite;
 }
 @keyframes marquee-slide {
   0%   { transform: translateX(0%); }
