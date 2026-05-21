@@ -57,18 +57,6 @@ button { font: inherit; }
   overflow: hidden;
   isolation: isolate;
 }
-/* Fade the hero bottom into the light sections below */
-.hero-wrap::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 220px;
-  background: linear-gradient(to bottom, transparent 0%, rgba(248,248,246,0.75) 65%, #f8f8f6 100%);
-  z-index: 15;
-  pointer-events: none;
-}
 
 /* Kept for backward-compatibility but no longer used as a flow-wrapping shell */
 .index-wrapper {
@@ -3387,8 +3375,8 @@ a.cp-info__link:hover .cp-info__value { color: var(--brand-blue); }
   pointer-events: none;
 }
 .sl-icon {
-  width: 52%;
-  max-width: 180px;
+  width: 78%;
+  max-width: 320px;
   height: auto;
   display: block;
   overflow: visible;
@@ -3487,7 +3475,9 @@ a.cp-info__link:hover .cp-info__value { color: var(--brand-blue); }
    HOME PAGE MAIN — light sections below the hero
    ═══════════════════════════════════════════════════════════════ */
 .home-main {
-  background: #f8f8f6;
+  position: relative;
+  /* Fade from the dark hero colour into the light page */
+  background: linear-gradient(to bottom, hsl(var(--bg-h) var(--bg-s) var(--bg-l)) 0px, #f8f8f6 110px);
 }
 /* Section head text */
 .home-main .section__title { color: #1a1f2e; }

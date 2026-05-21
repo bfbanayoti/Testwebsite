@@ -11,30 +11,41 @@ const SL_WHY = [
 
 function IconWebsite({ color }) {
   return (
-    <svg viewBox="0 0 140 100" className="sl-icon" aria-hidden="true">
+    <svg viewBox="0 0 260 180" className="sl-icon" aria-hidden="true">
       {/* Browser shell */}
-      <rect x="4" y="4" width="132" height="92" rx="10" fill="none" stroke={color} strokeWidth="1.6" opacity="0.5"/>
-      <rect x="4" y="4" width="132" height="22" rx="10" fill={color} opacity="0.08"/>
-      <line x1="4" y1="26" x2="136" y2="26" stroke={color} strokeWidth="1" opacity="0.2"/>
+      <rect x="2" y="2" width="256" height="176" rx="14" fill={color} fillOpacity="0.07" stroke={color} strokeWidth="1.5" strokeOpacity="0.35"/>
+      {/* Top bar */}
+      <rect x="2" y="2" width="256" height="32" rx="14" fill={color} fillOpacity="0.1"/>
+      <rect x="2" y="16" width="256" height="18" fill={color} fillOpacity="0.1"/>
       {/* Traffic lights */}
-      <circle cx="18" cy="15" r="3.5" fill={color} opacity="0.35"/>
-      <circle cx="28" cy="15" r="3.5" fill={color} opacity="0.35"/>
-      <circle cx="38" cy="15" r="3.5" fill={color} opacity="0.35"/>
+      <circle cx="20" cy="18" r="5" fill={color} fillOpacity="0.5"/>
+      <circle cx="34" cy="18" r="5" fill={color} fillOpacity="0.5"/>
+      <circle cx="48" cy="18" r="5" fill={color} fillOpacity="0.5"/>
       {/* URL bar */}
-      <rect x="50" y="10" width="74" height="10" rx="5" fill={color} opacity="0.1"/>
-      {/* Content lines — staggered fade-in loop */}
-      <rect x="16" y="38" height="5" rx="2.5" fill={color} opacity="0.5" className="sl-line sl-line--1">
-        <animate attributeName="width" values="0;72;72;0" dur="3s" repeatCount="indefinite" keyTimes="0;0.35;0.65;1" calcMode="spline" keySplines="0.4 0 0.2 1;0 0 1 1;0.4 0 0.2 1"/>
+      <rect x="66" y="10" width="130" height="16" rx="8" fill={color} fillOpacity="0.12"/>
+      {/* Hero image block */}
+      <rect x="12" y="42" width="232" height="72" rx="8" fill={color} fillOpacity="0.1">
+        <animate attributeName="fill-opacity" values="0.05;0.18;0.05" dur="2.8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1"/>
       </rect>
-      <rect x="16" y="50" height="5" rx="2.5" fill={color} opacity="0.35" className="sl-line sl-line--2">
-        <animate attributeName="width" values="0;96;96;0" dur="3s" begin="0.15s" repeatCount="indefinite" keyTimes="0;0.35;0.65;1" calcMode="spline" keySplines="0.4 0 0.2 1;0 0 1 1;0.4 0 0.2 1"/>
+      {/* Play button in hero */}
+      <circle cx="128" cy="78" r="18" fill={color} fillOpacity="0.18"/>
+      <polygon points="122,70 122,86 140,78" fill={color} fillOpacity="0.5">
+        <animate attributeName="fill-opacity" values="0.5;0.9;0.5" dur="2.8s" repeatCount="indefinite"/>
+      </polygon>
+      {/* Headline bar */}
+      <rect x="12" y="124" height="10" rx="5" fill={color} fillOpacity="0.55">
+        <animate attributeName="width" values="0;160;160;0" dur="3.5s" repeatCount="indefinite" keyTimes="0;0.3;0.7;1" calcMode="spline" keySplines="0.4 0 0.2 1;0 0 1 1;0.4 0 0.2 1"/>
       </rect>
-      <rect x="16" y="62" height="5" rx="2.5" fill={color} opacity="0.25" className="sl-line sl-line--3">
-        <animate attributeName="width" values="0;56;56;0" dur="3s" begin="0.3s" repeatCount="indefinite" keyTimes="0;0.35;0.65;1" calcMode="spline" keySplines="0.4 0 0.2 1;0 0 1 1;0.4 0 0.2 1"/>
+      {/* Sub lines */}
+      <rect x="12" y="142" height="7" rx="3.5" fill={color} fillOpacity="0.3">
+        <animate attributeName="width" values="0;220;220;0" dur="3.5s" begin="0.2s" repeatCount="indefinite" keyTimes="0;0.3;0.7;1" calcMode="spline" keySplines="0.4 0 0.2 1;0 0 1 1;0.4 0 0.2 1"/>
+      </rect>
+      <rect x="12" y="157" height="7" rx="3.5" fill={color} fillOpacity="0.2">
+        <animate attributeName="width" values="0;170;170;0" dur="3.5s" begin="0.4s" repeatCount="indefinite" keyTimes="0;0.3;0.7;1" calcMode="spline" keySplines="0.4 0 0.2 1;0 0 1 1;0.4 0 0.2 1"/>
       </rect>
       {/* Cursor blink */}
-      <rect x="90" y="60" width="2" height="12" rx="1" fill={color} opacity="0.7">
-        <animate attributeName="opacity" values="0.7;0;0.7" dur="1.1s" repeatCount="indefinite"/>
+      <rect x="174" y="121" width="2.5" height="14" rx="1.25" fill={color} fillOpacity="0.8">
+        <animate attributeName="opacity" values="1;0;1" dur="1.1s" repeatCount="indefinite"/>
       </rect>
     </svg>
   );
@@ -42,70 +53,64 @@ function IconWebsite({ color }) {
 
 function IconBranding({ color }) {
   return (
-    <svg viewBox="0 0 120 120" className="sl-icon" aria-hidden="true">
-      <g transform="translate(60,60)">
-        {/* Outer rotating ring */}
-        <circle r="46" fill="none" stroke={color} strokeWidth="1" strokeDasharray="8 6" opacity="0.25">
-          <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="12s" repeatCount="indefinite"/>
-        </circle>
-        {/* Rotating diamond */}
-        <polygon points="0,-34 24,0 0,34 -24,0" fill="none" stroke={color} strokeWidth="1.6" opacity="0.45">
-          <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="8s" repeatCount="indefinite"/>
-        </polygon>
-        {/* Counter-rotating inner diamond */}
-        <polygon points="0,-20 14,0 0,20 -14,0" fill={color} opacity="0.15">
-          <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="8s" repeatCount="indefinite"/>
-        </polygon>
-        {/* Pulsing center */}
-        <circle r="7" fill={color} opacity="0.5">
-          <animate attributeName="r" values="7;9;7" dur="2.4s" repeatCount="indefinite"/>
-          <animate attributeName="opacity" values="0.5;0.8;0.5" dur="2.4s" repeatCount="indefinite"/>
-        </circle>
-        {/* Sparkle dots */}
-        {[0,60,120,180,240,300].map((deg, i) => (
-          <circle key={deg}
-            cx={Math.cos((deg-90)*Math.PI/180)*34}
-            cy={Math.sin((deg-90)*Math.PI/180)*34}
-            r="2.5" fill={color} opacity="0.4">
-            <animate attributeName="opacity" values="0.4;0.9;0.4" dur="2s" begin={`${i*0.33}s`} repeatCount="indefinite"/>
-          </circle>
-        ))}
-      </g>
+    <svg viewBox="0 0 240 200" className="sl-icon" aria-hidden="true">
+      {/* Three overlapping brand circles — breathing apart and together */}
+      <circle cx="88" cy="90" r="62" fill={color} fillOpacity="0.18" stroke={color} strokeWidth="1.2" strokeOpacity="0.4">
+        <animateTransform attributeName="transform" type="translate" values="0,0;-10,0;0,0" dur="4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+        <animate attributeName="fill-opacity" values="0.18;0.28;0.18" dur="4s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="152" cy="90" r="62" fill={color} fillOpacity="0.18" stroke={color} strokeWidth="1.2" strokeOpacity="0.4">
+        <animateTransform attributeName="transform" type="translate" values="0,0;10,0;0,0" dur="4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+        <animate attributeName="fill-opacity" values="0.18;0.28;0.18" dur="4s" begin="0.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="120" cy="140" r="62" fill={color} fillOpacity="0.18" stroke={color} strokeWidth="1.2" strokeOpacity="0.4">
+        <animateTransform attributeName="transform" type="translate" values="0,0;0,10;0,0" dur="4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+        <animate attributeName="fill-opacity" values="0.18;0.28;0.18" dur="4s" begin="1s" repeatCount="indefinite"/>
+      </circle>
+      {/* Centre spark */}
+      <circle cx="120" cy="107" r="10" fill={color} fillOpacity="0.6">
+        <animate attributeName="r" values="10;14;10" dur="4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+        <animate attributeName="fill-opacity" values="0.6;1;0.6" dur="4s" repeatCount="indefinite"/>
+      </circle>
     </svg>
   );
 }
 
 function IconMarketing({ color }) {
   const bars = [
-    { x: 12, maxH: 28, delay: "0s",    op: 0.35 },
-    { x: 34, maxH: 44, delay: "0.18s", op: 0.45 },
-    { x: 56, maxH: 62, delay: "0.36s", op: 0.55 },
-    { x: 78, maxH: 50, delay: "0.22s", op: 0.50 },
-    { x:100, maxH: 72, delay: "0.44s", op: 0.65 },
+    { x: 20,  maxH: 50,  delay: "0s",    op: 0.35 },
+    { x: 68,  maxH: 80,  delay: "0.18s", op: 0.45 },
+    { x: 116, maxH: 110, delay: "0.36s", op: 0.55 },
+    { x: 164, maxH: 90,  delay: "0.22s", op: 0.50 },
+    { x: 212, maxH: 135, delay: "0.44s", op: 0.65 },
   ];
+  const baseline = 152;
   return (
-    <svg viewBox="0 0 132 92" className="sl-icon" aria-hidden="true">
-      {/* Baseline */}
-      <line x1="8" y1="84" x2="124" y2="84" stroke={color} strokeWidth="1.2" opacity="0.2"/>
+    <svg viewBox="0 0 260 170" className="sl-icon" aria-hidden="true">
       {/* Grid lines */}
-      {[20,40,60].map(y => (
-        <line key={y} x1="8" y1={84-y} x2="124" y2={84-y} stroke={color} strokeWidth="0.5" strokeDasharray="4 4" opacity="0.1"/>
+      {[40, 80, 120].map(y => (
+        <line key={y} x1="10" y1={baseline-y} x2="250" y2={baseline-y} stroke={color} strokeWidth="0.8" strokeDasharray="5 5" strokeOpacity="0.12"/>
       ))}
+      {/* Baseline */}
+      <line x1="10" y1={baseline} x2="250" y2={baseline} stroke={color} strokeWidth="1.4" strokeOpacity="0.3"/>
       {/* Animated bars */}
       {bars.map((b) => (
-        <rect key={b.x} x={b.x} width="18" rx="4" fill={color} opacity={b.op}>
-          <animate attributeName="height" values={`0;${b.maxH};${b.maxH};0`} dur="3.2s" begin={b.delay} repeatCount="indefinite" keyTimes="0;0.3;0.7;1" calcMode="spline" keySplines="0.4 0 0.2 1;0 0 1 1;0.4 0 0.2 1"/>
-          <animate attributeName="y"      values={`84;${84-b.maxH};${84-b.maxH};84`} dur="3.2s" begin={b.delay} repeatCount="indefinite" keyTimes="0;0.3;0.7;1" calcMode="spline" keySplines="0.4 0 0.2 1;0 0 1 1;0.4 0 0.2 1"/>
+        <rect key={b.x} x={b.x} width="28" rx="6" fill={color} fillOpacity={b.op}>
+          <animate attributeName="height" values={`0;${b.maxH};${b.maxH};0`} dur="3.4s" begin={b.delay} repeatCount="indefinite" keyTimes="0;0.3;0.7;1" calcMode="spline" keySplines="0.4 0 0.2 1;0 0 1 1;0.4 0 0.2 1"/>
+          <animate attributeName="y" values={`${baseline};${baseline-b.maxH};${baseline-b.maxH};${baseline}`} dur="3.4s" begin={b.delay} repeatCount="indefinite" keyTimes="0;0.3;0.7;1" calcMode="spline" keySplines="0.4 0 0.2 1;0 0 1 1;0.4 0 0.2 1"/>
         </rect>
       ))}
       {/* Trend line */}
-      <polyline points="21,70 43,56 65,36 87,46 109,18" fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" opacity="0.5" strokeDasharray="140" strokeDashoffset="140">
-        <animate attributeName="stroke-dashoffset" values="140;0;0;140" dur="3.2s" repeatCount="indefinite" keyTimes="0;0.35;0.65;1"/>
+      <polyline
+        points="34,116 82,82 130,52 178,70 226,28"
+        fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" strokeOpacity="0.6"
+        strokeDasharray="260" strokeDashoffset="260">
+        <animate attributeName="stroke-dashoffset" values="260;0;0;260" dur="3.4s" repeatCount="indefinite" keyTimes="0;0.35;0.65;1"/>
       </polyline>
-      {/* Dots on trend */}
-      {[[21,70],[43,56],[65,36],[87,46],[109,18]].map(([cx,cy],i) => (
-        <circle key={i} cx={cx} cy={cy} r="3" fill={color} opacity="0.7">
-          <animate attributeName="opacity" values="0;0.7;0.7;0" dur="3.2s" begin={`${i*0.07}s`} repeatCount="indefinite" keyTimes="0;0.35;0.65;1"/>
+      {/* Dots */}
+      {[[34,116],[82,82],[130,52],[178,70],[226,28]].map(([cx,cy],i) => (
+        <circle key={i} cx={cx} cy={cy} r="4" fill={color} fillOpacity="0.8">
+          <animate attributeName="opacity" values="0;1;1;0" dur="3.4s" begin={`${i*0.08}s`} repeatCount="indefinite" keyTimes="0;0.35;0.65;1"/>
         </circle>
       ))}
     </svg>
@@ -155,7 +160,6 @@ function SlServiceRow({ n, title, tagline, desc, features, tint, label, Icon, ic
         <div className="sl-row__icon-wrap">
           <Icon color={iconColor} />
         </div>
-        <span className="sl-row__visual-label">{label}</span>
       </div>
 
       <div className="sl-row__body">
