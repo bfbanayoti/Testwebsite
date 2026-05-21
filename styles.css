@@ -3554,16 +3554,7 @@ a.cp-info__link:hover .cp-info__value { color: var(--brand-blue); }
    ═══════════════════════════════════════════════════════════════ */
 .home-main {
   position: relative;
-  /* Gradient lives entirely inside the about-section's 120 px top padding
-     so ALL text content renders on white.  Starts at the exact hero colour
-     (no seam) and reaches #f8f8f6 by 130 px. */
-  background: linear-gradient(to bottom,
-    hsl(var(--bg-h) var(--bg-s) var(--bg-l))  0px,
-    hsl(252 68% 16%)  36px,
-    hsl(255 56% 36%)  68px,
-    hsl(258 44% 62%)  98px,
-    #f8f8f6          130px
-  );
+  background: #f8f8f6;
 }
 /* Section head text */
 .home-main .section__title { color: #1a1f2e; }
