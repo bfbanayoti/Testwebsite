@@ -2659,128 +2659,119 @@ a.cp-info__link:hover .cp-info__value { color: var(--brand-blue); }
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   CONTACT PAGE — transparent frosted glass (SaaS-style)
-   rgba(255,255,255,0.4) cards over a colourful gradient field.
+   CONTACT PAGE — iOS 26 liquid glass
+   Thin glass (low opacity), heavy blur, single specular edge, crisp field lines.
    ═══════════════════════════════════════════════════════════════ */
 
-/* Rich gradient background — visible through the transparent glass */
+/* Vivid gradient field — makes the thin glass transparency visible */
 .al-page.cp-root {
   background:
-    radial-gradient(ellipse 90% 70% at 0% 10%,   rgba(99,102,241,0.22), transparent 55%),
-    radial-gradient(ellipse 75% 60% at 100% 80%,  rgba(26,140,255,0.18), transparent 55%),
-    radial-gradient(ellipse 60% 80% at 55% 50%,   rgba(168,85,247,0.10), transparent 60%),
-    #e8eaf6;
+    radial-gradient(ellipse 100% 80% at 0% 0%,    rgba(99,102,241,0.28), transparent 52%),
+    radial-gradient(ellipse 80%  70% at 100% 100%, rgba(26,140,255,0.22), transparent 52%),
+    radial-gradient(ellipse 70%  90% at 50%  50%,  rgba(168,85,247,0.12), transparent 60%),
+    #dde0f0;
   color: #1a1f2e;
 }
 
-/* Large vivid orbs — the colour shows through the white glass */
+/* Orbs: bright, tight — rich ambient colour shows through thin glass */
 .al-page.cp-root .cp-orb--a {
-  background: radial-gradient(circle, rgba(99,102,241,0.45) 0%, transparent 68%);
-  filter: blur(50px);
+  background: radial-gradient(circle, rgba(99,102,241,0.55) 0%, transparent 65%);
+  filter: blur(48px);
   opacity: 1;
 }
 .al-page.cp-root .cp-orb--b {
-  background: radial-gradient(circle, rgba(26,140,255,0.36) 0%, transparent 68%);
-  filter: blur(50px);
+  background: radial-gradient(circle, rgba(26,140,255,0.44) 0%, transparent 65%);
+  filter: blur(48px);
   opacity: 1;
 }
 
-/* ── Transparent frosted-glass cards — exactly like the SaaS reference ── */
+/* ── iOS 26 liquid glass card ── */
 .al-page.cp-root .cp-glass {
-  background: rgba(255, 255, 255, 0.40);
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.14);   /* thin — background bleeds through */
+  backdrop-filter: blur(48px) saturate(160%) brightness(1.06);
+  -webkit-backdrop-filter: blur(48px) saturate(160%) brightness(1.06);
+  border: 1px solid rgba(255, 255, 255, 0.38);
   box-shadow:
-    0 25px 80px -12px rgba(0,0,0,0.08),
-    0 0 0 1px rgba(0,0,0,0.04);
+    0 4px 24px rgba(0,0,0,0.06),
+    inset 0 1px 0 rgba(255,255,255,0.70);  /* single specular edge — the iOS signature */
 }
-/* Glass shine — top-left diagonal highlight */
-.al-page.cp-root .cp-glass::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: linear-gradient(
-    138deg,
-    rgba(255,255,255,0.55) 0%,
-    rgba(255,255,255,0.15) 25%,
-    transparent 50%
-  );
-  pointer-events: none;
-  z-index: 0;
-}
-/* Top prismatic line */
+/* NO diagonal fill gradient — that was causing the milky gloss.
+   Only a razor-thin 1px top specular line (already in box-shadow above). */
+.al-page.cp-root .cp-glass::after { display: none; }
+
+/* Prismatic top accent */
 .al-page.cp-root .cp-glass__top-line {
   background: linear-gradient(90deg,
     transparent,
-    rgba(99,102,241,0.45) 30%,
-    rgba(26,140,255,0.55) 50%,
-    rgba(99,102,241,0.45) 70%,
+    rgba(255,255,255,0.75) 30%,
+    rgba(255,255,255,0.90) 50%,
+    rgba(255,255,255,0.75) 70%,
     transparent
   );
   height: 1px;
 }
 
-/* ── Info panel — dark text (glass is light/transparent) ── */
-.al-page.cp-root .cp-panel__intro { color: #4a5272; }
-.al-page.cp-root .cp-info__label  { color: #8892b0; }
+/* ── Info panel ── */
+.al-page.cp-root .cp-panel__intro { color: rgba(26,31,46,0.72); }
+.al-page.cp-root .cp-info__label  { color: rgba(26,31,46,0.50); }
 .al-page.cp-root .cp-info__value  { color: #1a1f2e; }
 .al-page.cp-root .cp-info__icon {
-  color: #5a6276;
-  background: rgba(255,255,255,0.55);
-  border-color: rgba(255,255,255,0.65);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  color: rgba(26,31,46,0.60);
+  background: rgba(255,255,255,0.32);
+  border-color: rgba(255,255,255,0.50);
+  box-shadow: none;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
 }
 .al-page.cp-root .cp-info__link:hover .cp-info__value { color: var(--brand-blue); }
-.al-page.cp-root .cp-panel__divider { background: rgba(0,0,0,0.08); }
-.al-page.cp-root .cp-socials__label { color: #8892b0; }
+.al-page.cp-root .cp-panel__divider { background: rgba(0,0,0,0.10); }
+.al-page.cp-root .cp-socials__label { color: rgba(26,31,46,0.50); }
 .al-page.cp-root .cp-social-btn {
-  background: rgba(255,255,255,0.50);
-  border-color: rgba(255,255,255,0.65);
-  color: #3a4060;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-.al-page.cp-root .cp-social-btn:hover {
-  background: rgba(255,255,255,0.78);
-  border-color: rgba(255,255,255,0.90);
-  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-}
-
-/* ── Form fields — transparent glass inputs ── */
-.al-page.cp-root .cp-field__label { color: #3a4060; }
-.al-page.cp-root .cp-required      { color: #e0455a; }
-.al-page.cp-root .cp-optional      { color: #8892b0; }
-.al-page.cp-root .cp-field__input {
-  background: rgba(255,255,255,0.45);
-  border: 1px solid rgba(255,255,255,0.60);
+  background: rgba(255,255,255,0.22);
+  border-color: rgba(255,255,255,0.45);
   color: #1a1f2e;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
-  box-shadow: inset 0 1px 2px rgba(0,0,0,0.04);
+  box-shadow: none;
 }
-.al-page.cp-root .cp-field__input::placeholder { color: rgba(90,98,118,0.65); }
+.al-page.cp-root .cp-social-btn:hover {
+  background: rgba(255,255,255,0.42);
+  border-color: rgba(255,255,255,0.62);
+}
+
+/* ── Form fields — defined lines, clearly legible ── */
+.al-page.cp-root .cp-field__label { color: rgba(26,31,46,0.80); }
+.al-page.cp-root .cp-required      { color: #e0455a; }
+.al-page.cp-root .cp-optional      { color: rgba(26,31,46,0.42); }
+.al-page.cp-root .cp-field__input {
+  background: rgba(255,255,255,0.18);          /* thin, see-through */
+  border: 1.5px solid rgba(26,31,46,0.18);     /* crisp dark line — the "defined" part */
+  color: #1a1f2e;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.50),      /* inner top specular */
+    0 1px 3px rgba(0,0,0,0.06);
+}
+.al-page.cp-root .cp-field__input::placeholder { color: rgba(26,31,46,0.38); }
 .al-page.cp-root .cp-field__input:focus {
-  border-color: rgba(26,140,255,0.50);
-  background: rgba(255,255,255,0.70);
+  border-color: rgba(26,140,255,0.60);
+  background: rgba(255,255,255,0.30);
   box-shadow:
     0 0 0 3px rgba(26,140,255,0.12),
-    inset 0 1px 2px rgba(0,0,0,0.03);
+    inset 0 1px 0 rgba(255,255,255,0.60);
+  outline: none;
 }
 .al-page.cp-root .cp-form__error {
   color: #c0392b;
-  background: rgba(255,240,240,0.65);
-  border-color: rgba(245,198,203,0.75);
+  background: rgba(255,255,255,0.22);
+  border-color: rgba(224,69,90,0.40);
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
 }
 /* Sent state */
 .al-page.cp-root .cp-sent__title { color: #1a1f2e; }
-.al-page.cp-root .cp-sent__sub   { color: #5a6276; }
+.al-page.cp-root .cp-sent__sub   { color: rgba(26,31,46,0.60); }
 
 /* ═══════════════════════════════════════════
    LAPTOP MOCKUP (portfolio live screenshots)
