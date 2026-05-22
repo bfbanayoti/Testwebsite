@@ -2659,119 +2659,66 @@ a.cp-info__link:hover .cp-info__value { color: var(--brand-blue); }
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   CONTACT PAGE — iOS 26 liquid glass
-   Thin glass (low opacity), heavy blur, single specular edge, crisp field lines.
+   CONTACT PAGE — light-theme overrides (.al-page.cp-root)
    ═══════════════════════════════════════════════════════════════ */
-
-/* Vivid gradient field — makes the thin glass transparency visible */
 .al-page.cp-root {
-  background:
-    radial-gradient(ellipse 100% 80% at 0% 0%,    rgba(99,102,241,0.28), transparent 52%),
-    radial-gradient(ellipse 80%  70% at 100% 100%, rgba(26,140,255,0.22), transparent 52%),
-    radial-gradient(ellipse 70%  90% at 50%  50%,  rgba(168,85,247,0.12), transparent 60%),
-    #dde0f0;
+  background: #f8f8f6;
   color: #1a1f2e;
 }
-
-/* Orbs: bright, tight — rich ambient colour shows through thin glass */
+/* Soften ambient orbs for light bg */
 .al-page.cp-root .cp-orb--a {
-  background: radial-gradient(circle, rgba(99,102,241,0.55) 0%, transparent 65%);
-  filter: blur(48px);
-  opacity: 1;
+  background: radial-gradient(circle, rgba(99,102,241,0.08) 0%, transparent 70%);
+  filter: blur(80px);
 }
 .al-page.cp-root .cp-orb--b {
-  background: radial-gradient(circle, rgba(26,140,255,0.44) 0%, transparent 65%);
-  filter: blur(48px);
-  opacity: 1;
+  background: radial-gradient(circle, rgba(26,140,255,0.06) 0%, transparent 70%);
+  filter: blur(80px);
 }
-
-/* ── iOS 26 liquid glass card ── */
+/* Glass cards → white cards */
 .al-page.cp-root .cp-glass {
-  background: rgba(255, 255, 255, 0.14);   /* thin — background bleeds through */
-  backdrop-filter: blur(48px) saturate(160%) brightness(1.06);
-  -webkit-backdrop-filter: blur(48px) saturate(160%) brightness(1.06);
-  border: 1px solid rgba(255, 255, 255, 0.38);
-  box-shadow:
-    0 4px 24px rgba(0,0,0,0.06),
-    inset 0 1px 0 rgba(255,255,255,0.70);  /* single specular edge — the iOS signature */
+  background: #ffffff;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 1px solid #e8e8eb;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
 }
-/* NO diagonal fill gradient — that was causing the milky gloss.
-   Only a razor-thin 1px top specular line (already in box-shadow above). */
 .al-page.cp-root .cp-glass::after { display: none; }
-
-/* Prismatic top accent */
 .al-page.cp-root .cp-glass__top-line {
-  background: linear-gradient(90deg,
-    transparent,
-    rgba(255,255,255,0.75) 30%,
-    rgba(255,255,255,0.90) 50%,
-    rgba(255,255,255,0.75) 70%,
-    transparent
-  );
-  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(99,102,241,0.25) 50%, transparent);
 }
-
-/* ── Info panel ── */
-.al-page.cp-root .cp-panel__intro { color: rgba(26,31,46,0.72); }
-.al-page.cp-root .cp-info__label  { color: rgba(26,31,46,0.50); }
+/* Info panel text */
+.al-page.cp-root .cp-panel__intro { color: #5a6276; }
+.al-page.cp-root .cp-info__label  { color: #9aa0b2; }
 .al-page.cp-root .cp-info__value  { color: #1a1f2e; }
-.al-page.cp-root .cp-info__icon {
-  color: rgba(26,31,46,0.60);
-  background: rgba(255,255,255,0.32);
-  border-color: rgba(255,255,255,0.50);
-  box-shadow: none;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-}
+.al-page.cp-root .cp-info__icon   { color: #5a6276; background: #f0f1f5; border-color: transparent; }
 .al-page.cp-root .cp-info__link:hover .cp-info__value { color: var(--brand-blue); }
-.al-page.cp-root .cp-panel__divider { background: rgba(0,0,0,0.10); }
-.al-page.cp-root .cp-socials__label { color: rgba(26,31,46,0.50); }
+.al-page.cp-root .cp-panel__divider { background: #ebebeb; }
+.al-page.cp-root .cp-socials__label { color: #9aa0b2; }
 .al-page.cp-root .cp-social-btn {
-  background: rgba(255,255,255,0.22);
-  border-color: rgba(255,255,255,0.45);
-  color: #1a1f2e;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  box-shadow: none;
+  background: #f4f5f8;
+  border-color: #e0e2e8;
+  color: #3a4060;
 }
-.al-page.cp-root .cp-social-btn:hover {
-  background: rgba(255,255,255,0.42);
-  border-color: rgba(255,255,255,0.62);
-}
-
-/* ── Form fields — defined lines, clearly legible ── */
-.al-page.cp-root .cp-field__label { color: rgba(26,31,46,0.80); }
+.al-page.cp-root .cp-social-btn:hover { background: #eef0f8; border-color: #c7cbdc; }
+/* Form */
+.al-page.cp-root .cp-field__label { color: #4a5070; }
 .al-page.cp-root .cp-required      { color: #e0455a; }
-.al-page.cp-root .cp-optional      { color: rgba(26,31,46,0.42); }
+.al-page.cp-root .cp-optional      { color: #9aa0b2; }
 .al-page.cp-root .cp-field__input {
-  background: rgba(255,255,255,0.18);          /* thin, see-through */
-  border: 1.5px solid rgba(26,31,46,0.18);     /* crisp dark line — the "defined" part */
+  background: #f5f6fa;
+  border: 1px solid #d8dae6;
   color: #1a1f2e;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.50),      /* inner top specular */
-    0 1px 3px rgba(0,0,0,0.06);
 }
-.al-page.cp-root .cp-field__input::placeholder { color: rgba(26,31,46,0.38); }
+.al-page.cp-root .cp-field__input::placeholder { color: #aab0c4; }
 .al-page.cp-root .cp-field__input:focus {
-  border-color: rgba(26,140,255,0.60);
-  background: rgba(255,255,255,0.30);
-  box-shadow:
-    0 0 0 3px rgba(26,140,255,0.12),
-    inset 0 1px 0 rgba(255,255,255,0.60);
-  outline: none;
+  border-color: var(--brand-blue);
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(26,140,255,0.12);
 }
-.al-page.cp-root .cp-form__error {
-  color: #c0392b;
-  background: rgba(255,255,255,0.22);
-  border-color: rgba(224,69,90,0.40);
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-}
+.al-page.cp-root .cp-form__error { color: #c0392b; background: #fff0f0; border-color: #f5c6cb; }
 /* Sent state */
 .al-page.cp-root .cp-sent__title { color: #1a1f2e; }
-.al-page.cp-root .cp-sent__sub   { color: rgba(26,31,46,0.60); }
+.al-page.cp-root .cp-sent__sub   { color: #5a6276; }
 
 /* ═══════════════════════════════════════════
    LAPTOP MOCKUP (portfolio live screenshots)
