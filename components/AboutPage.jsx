@@ -23,6 +23,36 @@ const AL_STATS = [
   { value: "8+",  label: "Years Experience", sub: "Combined team expertise" },
 ];
 
+function countUpStats(container) {
+  const statEls = container.querySelectorAll(".al-db-stat");
+  statEls.forEach((stat, i) => {
+    const valueEl = stat.querySelector(".al-db-stat__value");
+    if (!valueEl) return;
+    const original = valueEl.textContent.trim();
+    const num = parseInt(original, 10);
+    if (isNaN(num)) return;
+    const suffix = original.replace(/[0-9]/g, "");
+    const duration = 1200;
+    const delay = i * 140;
+    setTimeout(() => {
+      stat.classList.add("al-counting");
+      const t0 = performance.now();
+      function tick(now) {
+        const pct = Math.min((now - t0) / duration, 1);
+        const eased = 1 - Math.pow(1 - pct, 3); // ease-out cubic
+        valueEl.textContent = Math.floor(eased * num) + suffix;
+        if (pct < 1) {
+          requestAnimationFrame(tick);
+        } else {
+          valueEl.textContent = original;
+          stat.classList.remove("al-counting");
+        }
+      }
+      requestAnimationFrame(tick);
+    }, delay);
+  });
+}
+
 function AboutPage() {
   React.useEffect(() => {
     const els = document.querySelectorAll("[data-al-animate]");
@@ -31,11 +61,14 @@ function AboutPage() {
         entries.forEach((e) => {
           if (e.isIntersecting) {
             e.target.classList.add("al-visible");
+            if (e.target.classList.contains("al-dashboard")) {
+              countUpStats(e.target);
+            }
             io.unobserve(e.target);
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.15 }
     );
     els.forEach((el) => io.observe(el));
     return () => io.disconnect();
@@ -76,6 +109,7 @@ function AboutPage() {
       <section className="al-metrics">
         <div className="al-inner">
           <div className="al-dashboard" data-al-animate data-al-delay="0">
+            <div className="al-db-scan" aria-hidden="true" />
 
             <div className="al-db-topbar">
               <div className="al-db-topbar__left">
@@ -117,10 +151,12 @@ function AboutPage() {
                     </linearGradient>
                   </defs>
                   <path
+                    className="al-chart-fill"
                     d="M0,65 C60,60 110,52 160,44 C200,38 220,46 260,36 C300,26 350,16 400,9 C440,4 470,2 500,1 L500,72 L0,72 Z"
                     fill="url(#alChartGrad)"
                   />
                   <path
+                    className="al-chart-line"
                     d="M0,65 C60,60 110,52 160,44 C200,38 220,46 260,36 C300,26 350,16 400,9 C440,4 470,2 500,1"
                     fill="none"
                     stroke="#1a8cff"
