@@ -83,12 +83,12 @@ function AboutPage() {
           <span className="al-eyebrow" data-al-animate data-al-delay="0">
             <span className="al-eyebrow-dot"></span>About Us
           </span>
-          <h1 className="al-hero__title" data-al-animate data-al-delay="1">
-            Crafting digital<br />
-            experiences with{" "}
-            <em>purpose,<br />passion,</em> and precision.
+          <h1 className="al-hero__title">
+            <span className="al-tl" data-al-animate data-al-delay="1">Crafting digital</span>
+            <span className="al-tl" data-al-animate data-al-delay="2">experiences with <em>purpose,</em></span>
+            <span className="al-tl" data-al-animate data-al-delay="3"><em>passion,</em> and precision.</span>
           </h1>
-          <div className="al-hero__body" data-al-animate data-al-delay="2">
+          <div className="al-hero__body" data-al-animate data-al-delay="4">
             <p>
               Banayoti Consulting is a creative digital consultancy that partners with ambitious brands
               and businesses to unlock their full digital potential. We specialize in website development,
@@ -101,6 +101,43 @@ function AboutPage() {
               designers, and strategists who work collaboratively to create seamless and impactful
               digital experiences.
             </p>
+          </div>
+        </div>
+
+        {/* Floating metric card — SaaS-style live stat, hidden on mobile */}
+        <div className="al-hero__float-wrap" aria-hidden="true">
+          <div className="al-hero__float" data-al-animate data-al-delay="5">
+            <div className="al-float__header">
+              <span className="al-float__live"></span>
+              <span className="al-float__live-text">Live</span>
+            </div>
+            <div className="al-float__value">30+</div>
+            <div className="al-float__label">Happy Clients</div>
+            <svg viewBox="0 0 160 40" className="al-float__spark" aria-hidden="true">
+              <defs>
+                <linearGradient id="floatGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#1a8cff" stopOpacity="0.18" />
+                  <stop offset="100%" stopColor="#1a8cff" stopOpacity="0" />
+                </linearGradient>
+              </defs>
+              <path
+                d="M0,36 C20,34 35,28 55,20 C75,12 85,22 105,15 C125,8 142,4 160,2 L160,40 L0,40 Z"
+                fill="url(#floatGrad)"
+                className="al-float__spark-fill"
+              />
+              <path
+                d="M0,36 C20,34 35,28 55,20 C75,12 85,22 105,15 C125,8 142,4 160,2"
+                fill="none"
+                stroke="#1a8cff"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                className="al-float__spark-line"
+              />
+            </svg>
+            <div className="al-float__footer">
+              <span className="al-float__arrow">↑</span>
+              40% growth YoY
+            </div>
           </div>
         </div>
       </section>
