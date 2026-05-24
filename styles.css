@@ -248,6 +248,8 @@ button { font: inherit; }
   text-decoration: none;
   color: var(--foreground);
   padding-right: 8px;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 /* Logo mark — slightly smaller to sit inside the pill cleanly */
@@ -283,6 +285,8 @@ button { font: inherit; }
   letter-spacing: -0.012em;
   color: var(--foreground);
   line-height: 1;
+  white-space: nowrap;
+  word-break: keep-all;
 }
 .navbar__logo-sub {
   font-family: var(--sans);
