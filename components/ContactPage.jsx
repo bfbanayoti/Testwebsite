@@ -29,18 +29,25 @@ function ContactPage() {
     e.preventDefault();
     setStatus("sending");
     try {
+      const data = new FormData();
+      Object.entries(form).forEach(([key, val]) => {
+        if (val) data.append(key, val);
+      });
       const res = await fetch("https://formspree.io/f/xjgzoqqd", {
         method: "POST",
-        headers: { "Content-Type": "application/json", "Accept": "application/json" },
-        body: JSON.stringify(form),
+        body: data,
+        headers: { "Accept": "application/json" },
       });
       if (res.ok) {
         setStatus("sent");
         setForm({ name: "", email: "", phone: "", subject: "", message: "" });
       } else {
+        const json = await res.json().catch(() => ({}));
+        console.error("Formspree error:", json);
         setStatus("error");
       }
-    } catch {
+    } catch (err) {
+      console.error("Submission error:", err);
       setStatus("error");
     }
   };
