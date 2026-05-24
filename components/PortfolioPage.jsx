@@ -42,7 +42,7 @@ const PROJECTS = [
     n: "04",
     client: "Excela Properties",
     sector: "Website development",
-    desc: "A polished property website for a UAE real estate company, showcasing developments and listings with a trustworthy, conversion-led design.",
+    desc: "A polished property website for a UK-based property company, showcasing developments and listings with a trustworthy, conversion-led design.",
     quote: "Banayoti Consulting transformed our online presence with a sleek, responsive website that truly represents our brand. Their team's expertise in digital marketing has significantly increased our online engagement. Their ongoing support and attention to detail have made them an invaluable digital partner.",
     by: "Ayman Girgis",
     visual: "https://banayoti.com/wp-content/uploads/2025/11/Macbook-Laptop-Screen-Mockup-1-1-1.png",

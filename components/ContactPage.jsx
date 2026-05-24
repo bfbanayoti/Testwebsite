@@ -167,7 +167,7 @@ function ContactPage() {
                     name="name"
                     value={form.name}
                     onChange={handleChange}
-                    placeholder="Barsoum Banayoti"
+                    placeholder="Sarah Mitchell"
                     required
                     autoComplete="name"
                   />

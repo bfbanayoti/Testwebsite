@@ -3994,3 +3994,103 @@ a.cp-info__link:hover .cp-info__value { color: var(--brand-blue); }
   background: #ffffff;
 }
 .al-page .case-row__cta:hover { background: #1a1f2e; color: #ffffff; border-color: #1a1f2e; }
+
+/* ═══════════════════════════════════════════════════════════════
+   UAE ALLEGIANCE BANNER
+   ═══════════════════════════════════════════════════════════════ */
+.uae-banner {
+  position: relative;
+  z-index: 61;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  height: 32px;
+  padding: 0 16px;
+  background: rgba(10, 12, 24, 0.55);
+  backdrop-filter: blur(10px) saturate(160%);
+  -webkit-backdrop-filter: blur(10px) saturate(160%);
+  overflow: hidden;
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.72);
+  text-transform: uppercase;
+}
+
+/* UAE flag colour stripe along the bottom edge */
+.uae-banner::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1.5px;
+  background: linear-gradient(
+    90deg,
+    #EF3340 0% 25%,
+    #ffffff 25% 50%,
+    #1a1a1a 50% 75%,
+    #00732F 75% 100%
+  );
+  opacity: 0.55;
+}
+
+/* Mini flag with a gentle wave */
+.uae-flag-svg {
+  width: 20px;
+  height: 13px;
+  border-radius: 2px;
+  flex-shrink: 0;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.35);
+  transform-origin: left center;
+  animation: uae-flag-wave 3.6s ease-in-out infinite;
+}
+
+@keyframes uae-flag-wave {
+  0%,  100% { transform: perspective(60px) rotateY(0deg)   scaleX(1);    }
+  30%        { transform: perspective(60px) rotateY(5deg)   scaleX(0.97); }
+  65%        { transform: perspective(60px) rotateY(-4deg)  scaleX(1.02); }
+}
+
+/* Shimmer text: green → white → green */
+.uae-banner__text {
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0.65) 0%,
+    #00b84a               30%,
+    rgba(255,255,255,0.90) 50%,
+    #00b84a               70%,
+    rgba(255,255,255,0.65) 100%
+  );
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: uae-text-shimmer 5s linear infinite;
+}
+
+@keyframes uae-text-shimmer {
+  0%   { background-position: 0%   center; }
+  100% { background-position: 220% center; }
+}
+
+.uae-banner__sep {
+  opacity: 0.30;
+  font-size: 9px;
+  -webkit-text-fill-color: rgba(255,255,255,0.30);
+  color: rgba(255,255,255,0.30);
+}
+
+.uae-banner__arabic {
+  font-size: 12px;
+  font-family: 'Segoe UI', 'Tahoma', 'Arial Unicode MS', sans-serif;
+  letter-spacing: 0.04em;
+  opacity: 0.78;
+  -webkit-text-fill-color: rgba(255,255,255,0.78);
+  color: rgba(255,255,255,0.78);
+}
+
+/* Hide on very small screens to keep nav uncluttered */
+@media (max-width: 380px) {
+  .uae-banner__arabic { display: none; }
+  .uae-banner__sep    { display: none; }
+}

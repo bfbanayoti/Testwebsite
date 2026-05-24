@@ -43,6 +43,24 @@ function HeroNav({ current = "Home", onSelect }) {
   };
 
   return (
+    <React.Fragment>
+
+    {/* ── UAE Allegiance Banner ── */}
+    <div className="uae-banner" role="note" aria-label="Fakhr Bi AL Emarat — Pride in the UAE">
+      <span className="uae-banner__flag" aria-hidden="true">
+        <svg className="uae-flag-svg" viewBox="0 0 30 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="30" height="20" rx="2" fill="#fff"/>
+          <rect width="9" height="20" fill="#EF3340"/>
+          <rect x="9" y="0" width="21" height="6.67" fill="#00732F"/>
+          <rect x="9" y="6.67" width="21" height="6.66" fill="#fff"/>
+          <rect x="9" y="13.33" width="21" height="6.67" fill="#1a1a1a"/>
+        </svg>
+      </span>
+      <span className="uae-banner__text">Fakhr Bi AL Emarat</span>
+      <span className="uae-banner__sep" aria-hidden="true">·</span>
+      <span className="uae-banner__arabic" dir="rtl" lang="ar">فخر بالإمارات</span>
+    </div>
+
     <div className="nav-shell">
       <nav className="navbar" aria-label="Primary">
         <a
@@ -120,6 +138,8 @@ function HeroNav({ current = "Home", onSelect }) {
         </ul>
       </div>
     </div>
+
+    </React.Fragment>
   );
 }
 
