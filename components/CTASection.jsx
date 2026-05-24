@@ -4,7 +4,7 @@ function CTASection() {
   return (
     <section className="section section--cta" id="contact" aria-labelledby="cta-title">
       <div className="section__inner">
-        <div className="cta-card">
+        <div className="cta-card" data-al-animate data-al-delay="0">
           <div className="cta-card__glow" aria-hidden="true"></div>
           <span className="section__eyebrow cta-card__eyebrow">
             <span className="section__eyebrow-dot"></span>

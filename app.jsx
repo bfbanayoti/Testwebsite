@@ -47,6 +47,46 @@ function App() {
 
   React.useEffect(() => { window.__handleNav = handleSelect; }, [handleSelect]);
 
+  // ── Scroll-entrance animations for home page sections ──
+  React.useEffect(() => {
+    if (view !== "Home") return;
+
+    const countUp = (el) => {
+      const target = parseInt(el.dataset.countTo, 10);
+      if (isNaN(target)) return;
+      const dur = 1300;
+      let startTime = null;
+      const tick = (ts) => {
+        if (!startTime) startTime = ts;
+        const progress = Math.min((ts - startTime) / dur, 1);
+        const ease = 1 - Math.pow(1 - progress, 3); // cubic ease-out
+        el.textContent = Math.round(ease * target);
+        if (progress < 1) requestAnimationFrame(tick);
+        else el.textContent = target;
+      };
+      requestAnimationFrame(tick);
+    };
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (!e.isIntersecting) return;
+          e.target.classList.add("al-visible");
+          e.target.querySelectorAll("[data-count-to]").forEach(countUp);
+          io.unobserve(e.target);
+        });
+      },
+      { threshold: 0.13, rootMargin: "0px 0px -24px 0px" }
+    );
+
+    // Small delay lets React finish rendering the sections
+    const timer = setTimeout(() => {
+      document.querySelectorAll(".home-main [data-al-animate]").forEach((el) => io.observe(el));
+    }, 80);
+
+    return () => { clearTimeout(timer); io.disconnect(); };
+  }, [view]);
+
   return (
     <React.Fragment>
       {view === "Home" ? (

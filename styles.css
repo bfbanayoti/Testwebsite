@@ -2830,6 +2830,24 @@ a.cp-info__link:hover .cp-info__value { color: var(--brand-blue); }
 [data-al-animate][data-al-delay="4"] { transition-delay: 0.44s; }
 [data-al-animate][data-al-delay="5"] { transition-delay: 0.60s; }
 
+/* ── Home page: spring easing + slightly larger lift ── */
+.home-main [data-al-animate] {
+  transform: translateY(32px);
+  transition: opacity 0.58s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.64s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.home-main [data-al-animate].al-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Stat counter — prevent layout shift during count-up */
+.stat-card__value [data-count-to] {
+  display: inline-block;
+  min-width: 1ch;
+  font-variant-numeric: tabular-nums;
+}
+
 /* Slide-from-left variant — why items */
 .al-why__item[data-al-animate] {
   transform: translateX(-18px);

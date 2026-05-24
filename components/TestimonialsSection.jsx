@@ -73,14 +73,14 @@ function TestimonialsSection() {
   return (
     <section className="section section--testimonials" id="testimonials" aria-labelledby="t-title">
       <div className="section__inner">
-        <div className="section__head section__head--center">
+        <div className="section__head section__head--center" data-al-animate data-al-delay="0">
           <span className="section__eyebrow"><span className="section__eyebrow-dot"></span>Testimonials</span>
           <h2 id="t-title" className="section__title section__title--center">
             What our clients <span className="section__title-grad">actually say.</span>
           </h2>
         </div>
 
-        <div className="t-masonry">
+        <div className="t-masonry" data-al-animate data-al-delay="1">
           {TESTIMONIALS.map((t, i) => (
             <TestimonialCard key={i} {...t} />
           ))}

@@ -1,18 +1,16 @@
 // StatsSection.jsx — "We're More Than Just a Digital Agency."
-// Real numbers aren't published on banayoti.com (showed "0+") — these are
-// confident placeholders the user can edit anytime.
 
 function StatsSection() {
   const stats = [
-    { label: "Clients",                    value: "30", suffix: "+" },
-    { label: "5‑Star Reviews",             value: "25", suffix: "+" },
-    { label: "Years of combined experience", value: "8", suffix: "+" },
+    { label: "Clients",                      value: "30", suffix: "+" },
+    { label: "5‑Star Reviews",               value: "25", suffix: "+" },
+    { label: "Years of combined experience", value: "8",  suffix: "+" },
   ];
 
   return (
     <section className="section section--stats" aria-labelledby="stats-title">
       <div className="section__inner">
-        <div className="section__head section__head--center">
+        <div className="section__head section__head--center" data-al-animate data-al-delay="0">
           <span className="section__eyebrow">
             <span className="section__eyebrow-dot"></span>
             Who we are
@@ -28,10 +26,10 @@ function StatsSection() {
         </div>
 
         <div className="stats__grid">
-          {stats.map((s) => (
-            <div key={s.label} className="stat-card">
+          {stats.map((s, i) => (
+            <div key={s.label} className="stat-card" data-al-animate data-al-delay={String(i + 1)}>
               <div className="stat-card__value">
-                <span>{s.value}</span><sup>{s.suffix}</sup>
+                <span data-count-to={s.value}>{s.value}</span><sup>{s.suffix}</sup>
               </div>
               <div className="stat-card__label">{s.label}</div>
             </div>

@@ -40,9 +40,9 @@ const SERVICES = [
   },
 ];
 
-function ServiceCard({ n, title, body, icon }) {
+function ServiceCard({ n, title, body, icon, delay }) {
   return (
-    <article className="service-card">
+    <article className="service-card" data-al-animate data-al-delay={String(delay)}>
       <div className="service-card__top">
         <span className="service-card__n">{n}</span>
         <span className="service-card__icon">{icon}</span>
@@ -64,7 +64,7 @@ function ServicesSection() {
   return (
     <section className="section section--services" id="services" aria-labelledby="services-title">
       <div className="section__inner">
-        <div className="section__head section__head--center">
+        <div className="section__head section__head--center" data-al-animate data-al-delay="0">
           <span className="section__eyebrow"><span className="section__eyebrow-dot"></span>What we do</span>
           <h2 id="services-title" className="section__title section__title--center">
             From bold ideas to powerful execution —<br />
@@ -73,7 +73,7 @@ function ServicesSection() {
         </div>
 
         <div className="services__grid">
-          {SERVICES.map((s) => <ServiceCard key={s.n} {...s} />)}
+          {SERVICES.map((s, i) => <ServiceCard key={s.n} {...s} delay={i + 1} />)}
         </div>
       </div>
     </section>
