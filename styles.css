@@ -3999,41 +3999,14 @@ a.cp-info__link:hover .cp-info__value { color: var(--brand-blue); }
    FAKHR BIL EMARAT BADGE  — in navbar, next to Let's Talk
    ═══════════════════════════════════════════════════════════════ */
 
-/* Outer badge: row — flag LEFT, text RIGHT */
+/* Outer badge */
 .fakhr-badge {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 8px;
   margin-right: 12px;
   cursor: default;
   user-select: none;
-}
-
-/* ── Flag ── */
-.fakhr-flag-wrap {
-  flex-shrink: 0;
-  line-height: 0;
-  /* soft drop shadow so white stripe is visible on dark nav */
-  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.45));
-}
-
-.fakhr-flag-svg {
-  width: 40px;
-  height: 27px;
-  border-radius: 3px;
-  transform-origin: left center;
-  animation: fakhr-flag-wave 2.6s ease-in-out infinite;
-}
-
-/* Continuous flag wave: perspective rotation + slight skew */
-@keyframes fakhr-flag-wave {
-  0%   { transform: perspective(100px) rotateY(0deg)   skewY(0deg);     }
-  20%  { transform: perspective(100px) rotateY(12deg)  skewY(0.8deg);   }
-  45%  { transform: perspective(100px) rotateY(-8deg)  skewY(-0.5deg);  }
-  65%  { transform: perspective(100px) rotateY(9deg)   skewY(0.6deg);   }
-  85%  { transform: perspective(100px) rotateY(-5deg)  skewY(-0.3deg);  }
-  100% { transform: perspective(100px) rotateY(0deg)   skewY(0deg);     }
 }
 
 /* ── Text column ── */

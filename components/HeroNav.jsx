@@ -32,21 +32,6 @@ function FakhrBadge() {
   return (
     <div className="fakhr-badge" aria-label="Fakhoureen Bil Emarat — Proud of UAE">
 
-      {/* UAE flag — waving, to the left of the text */}
-      <div className="fakhr-flag-wrap" aria-hidden="true">
-        <svg className="fakhr-flag-svg" viewBox="0 0 40 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-          {/* Red vertical band */}
-          <rect width="40" height="27" rx="2" fill="#fff"/>
-          <rect x="0" y="0" width="11" height="27" rx="2" fill="#EF3340"/>
-          {/* Green top stripe */}
-          <rect x="11" y="0" width="29" height="9" fill="#00732F"/>
-          {/* White middle stripe */}
-          <rect x="11" y="9" width="29" height="9" fill="#ffffff"/>
-          {/* Black bottom stripe */}
-          <rect x="11" y="18" width="29" height="9" fill="#1a1a1a"/>
-        </svg>
-      </div>
-
       {/* Text stack */}
       <div className="fakhr-badge__text">
         <span className="fakhr-badge__ar-top" dir="rtl" lang="ar">فخورين</span>
