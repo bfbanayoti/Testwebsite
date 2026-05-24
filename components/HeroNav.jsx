@@ -28,6 +28,24 @@ function HamburgerIcon({ open }) {
   );
 }
 
+function FakhrBadge() {
+  return (
+    <div className="fakhr-badge" aria-label="Fakhoureen Bil Emarat — Proud of UAE">
+      <div className="fakhr-badge__text">
+        <span className="fakhr-badge__ar-top" dir="rtl" lang="ar">فخورين</span>
+        <span className="fakhr-badge__ar-bot" dir="rtl" lang="ar">بالإمارات</span>
+        <span className="fakhr-badge__en">PROUD OF UAE</span>
+      </div>
+      <div className="fakhr-badge__stripe" aria-hidden="true">
+        <span className="fakhr-badge__stripe-seg fakhr-badge__stripe-seg--green" />
+        <span className="fakhr-badge__stripe-seg fakhr-badge__stripe-seg--white" />
+        <span className="fakhr-badge__stripe-seg fakhr-badge__stripe-seg--black" />
+        <span className="fakhr-badge__stripe-seg fakhr-badge__stripe-seg--red"   />
+      </div>
+    </div>
+  );
+}
+
 function HeroNav({ current = "Home", onSelect }) {
   const [menuOpen, setMenuOpen] = React.useState(false);
   const items = [
@@ -43,24 +61,6 @@ function HeroNav({ current = "Home", onSelect }) {
   };
 
   return (
-    <React.Fragment>
-
-    {/* ── UAE Allegiance Banner ── */}
-    <div className="uae-banner" role="note" aria-label="Fakhr Bi AL Emarat — Pride in the UAE">
-      <span className="uae-banner__flag" aria-hidden="true">
-        <svg className="uae-flag-svg" viewBox="0 0 30 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="30" height="20" rx="2" fill="#fff"/>
-          <rect width="9" height="20" fill="#EF3340"/>
-          <rect x="9" y="0" width="21" height="6.67" fill="#00732F"/>
-          <rect x="9" y="6.67" width="21" height="6.66" fill="#fff"/>
-          <rect x="9" y="13.33" width="21" height="6.67" fill="#1a1a1a"/>
-        </svg>
-      </span>
-      <span className="uae-banner__text">Fakhr Bi AL Emarat</span>
-      <span className="uae-banner__sep" aria-hidden="true">·</span>
-      <span className="uae-banner__arabic" dir="rtl" lang="ar">فخر بالإمارات</span>
-    </div>
-
     <div className="nav-shell">
       <nav className="navbar" aria-label="Primary">
         <a
@@ -96,6 +96,7 @@ function HeroNav({ current = "Home", onSelect }) {
         </div>
 
         <div className="navbar__right">
+          <FakhrBadge />
           <button
             type="button"
             className={`navbar__menu-btn${menuOpen ? " is-open" : ""}`}
@@ -138,8 +139,6 @@ function HeroNav({ current = "Home", onSelect }) {
         </ul>
       </div>
     </div>
-
-    </React.Fragment>
   );
 }
 
