@@ -1695,6 +1695,12 @@ main {
   font-weight: 300;
 }
 .ph__cue {
+  /* reset button defaults */
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
+  /* layout */
   display: inline-flex;
   flex-direction: column;
   align-items: center;
@@ -1707,6 +1713,14 @@ main {
   text-transform: uppercase;
   color: var(--foreground-50);
   font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+.ph__cue:hover {
+  color: var(--foreground-90);
+}
+.ph__cue:hover .ph__cue-line {
+  animation-duration: 1.2s;
 }
 .ph__cue-line {
   width: 1px; height: 32px;

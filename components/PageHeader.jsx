@@ -1,10 +1,14 @@
 // PageHeader.jsx — cinematic inner-page header.
-// Nav pill at top, then a dramatic editorial band: small section number,
-// thin gold rule, eyebrow, oversized left-aligned title, lede paragraph,
-// and a scroll cue. Sits on the same liquid background as the home hero
-// but slimmer in height so the page content gets the bulk of the canvas.
 
 function PageHeader({ index = "01", eyebrow, title, gradTail, lede, current, onSelect }) {
+
+  const handleScrollCue = () => {
+    const main = document.querySelector("main");
+    if (main) {
+      main.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <div className="page-header page-header--v2">
       <div className="page-header__bg" aria-hidden="true">
@@ -37,10 +41,14 @@ function PageHeader({ index = "01", eyebrow, title, gradTail, lede, current, onS
 
           {lede ? <p className="ph__lede">{lede}</p> : null}
 
-          <div className="ph__cue" aria-hidden="true">
+          <button
+            className="ph__cue"
+            onClick={handleScrollCue}
+            aria-label="Scroll to content"
+          >
             <span>Scroll</span>
             <span className="ph__cue-line"></span>
-          </div>
+          </button>
         </div>
       </header>
     </div>
