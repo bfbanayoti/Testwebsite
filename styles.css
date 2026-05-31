@@ -966,6 +966,8 @@ main {
   color: transparent;
   padding-inline-end: 0.1em;
   margin-inline-end: -0.1em;
+  padding-bottom: 0.15em;
+  margin-bottom: -0.15em;
 }
 
 .section__lede {
@@ -1628,7 +1630,8 @@ main {
    ═══════════════════════════════════════════════════════════════════════ */
 .page-header {
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: visible;
   isolation: isolate;
 }
 .page-header__bg {
@@ -1683,12 +1686,14 @@ main {
   font-family: var(--display);
   font-weight: 400;
   font-size: clamp(56px, 9vw, 140px);
-  line-height: 0.98;
+  line-height: 1.05;
   letter-spacing: -0.025em;
   margin: 6px 0 0;
+  padding-bottom: 0.12em;
   color: var(--foreground);
   text-wrap: balance;
   max-width: 14ch;
+  overflow: visible;
 }
 .ph__lede {
   font-size: clamp(16px, 1.4vw, 20px);
@@ -3085,11 +3090,13 @@ a.cp-info__link:hover .cp-info__value { color: var(--brand-blue); }
   font-family: 'Instrument Serif', serif;
   font-size: clamp(48px, 7vw, 80px);
   font-weight: 400;
-  line-height: 1.05;
+  line-height: 1.12;
   letter-spacing: -0.025em;
   color: #1a1f2e;
   margin: 0 0 36px;
   max-width: 720px;
+  overflow: visible;
+  padding-bottom: 0.1em;
 }
 .al-hero__title em {
   font-style: italic;
