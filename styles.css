@@ -3925,6 +3925,7 @@ a.cp-info__link:hover .cp-info__value { color: var(--brand-blue); }
 }
 .home-main .service-card::before { display: none; }
 .home-main .service-card__shine  { display: none; }
+.home-main .service-card__n      { color: #1a8cff; }
 .home-main .service-card__title  { color: #1a1f2e; }
 .home-main .service-card__body   { color: #5a6276; }
 .home-main .service-card__link   { color: #1a1f2e; }
