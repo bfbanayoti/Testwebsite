@@ -16,7 +16,7 @@ function StatsSection() {
             Who we are
           </span>
           <h2 id="stats-title" className="section__title section__title--center">
-            We&rsquo;re more than just a <span className="section__title-grad">digital agency.</span>
+            We&rsquo;re more than just a <span className="section__title-grad">digital agency</span>
           </h2>
           <p className="section__lede section__lede--center">
             Banayoti Consulting is a results‑driven digital partner for brands that want
