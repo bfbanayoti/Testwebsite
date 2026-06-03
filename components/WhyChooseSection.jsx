@@ -14,7 +14,7 @@ function WhyChooseSection() {
         <div className="section__head" data-al-animate data-al-delay="0">
           <span className="section__eyebrow"><span className="section__eyebrow-dot"></span>Why Banayoti Consulting</span>
           <h2 id="why-title" className="section__title">
-            Reasons brands stay with us —<br />
+            Reasons brands stay with us<br />
             <span className="section__title-grad">long after launch.</span>
           </h2>
         </div>
