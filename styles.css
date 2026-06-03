@@ -956,6 +956,11 @@ main {
   text-wrap: balance;
 }
 .section__title--center { text-align: center; }
+/* Force exactly 2 lines — only the <br /> splits, nothing else wraps */
+.section__title--2lines {
+  white-space: nowrap;
+  text-wrap: nowrap;
+}
 .section__title-grad {
   font-style: italic;
   display: inline-block;
