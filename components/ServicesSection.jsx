@@ -68,7 +68,7 @@ function ServicesSection() {
           <span className="section__eyebrow"><span className="section__eyebrow-dot"></span>What we do</span>
           <h2 id="services-title" className="section__title section__title--center section__title--2lines">
             From bold ideas to powerful execution<br />
-            — our services cover <span className="section__title-grad">every digital need.</span>
+            our services cover <span className="section__title-grad">every digital need.</span>
           </h2>
         </div>
 
