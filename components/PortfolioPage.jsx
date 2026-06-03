@@ -204,7 +204,7 @@ function CaseStudy({ n, client, sector, desc, visual, url, cta, quote, by, tint,
           {quote ? (
             <blockquote className="case-row__quote">
               &ldquo;{quote}&rdquo;
-              {by && <cite>— {by}</cite>}
+              {by && <cite>{by}</cite>}
             </blockquote>
           ) : null}
           <a

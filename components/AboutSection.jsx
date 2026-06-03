@@ -12,7 +12,7 @@ function AboutSection() {
               Behind the Strategy
             </span>
             <h2 id="about-title" className="section__title" style={{ marginBottom: "32px" }} data-al-animate data-al-delay="1">
-              Custom websites, smart marketing, and bold branding —<br />
+              Custom websites, smart marketing, and bold branding<br />
               <span className="section__title-grad">designed to grow with your brand.</span>
             </h2>
             <p className="about__lede" data-al-animate data-al-delay="2">
@@ -21,7 +21,7 @@ function AboutSection() {
             </p>
             <p className="about__copy" data-al-animate data-al-delay="3">
               We specialise in website development, digital marketing, and branding
-              design — delivering cutting‑edge solutions tailored to our clients&rsquo;
+              design, delivering cutting‑edge solutions tailored to our clients&rsquo;
               unique goals and industries.
             </p>
             <a href="#about-full" className="link-cta" data-al-animate data-al-delay="4">

@@ -7,13 +7,13 @@ const AL_CORE_VALUES = [
   { title: "Excellence",  body: "We deliver quality that exceeds expectations, every single time." },
   { title: "Empathy",     body: "We listen to and understand our clients deeply before we build anything." },
   { title: "Growth",      body: "We focus on results that create sustainable, long-term success." },
-  { title: "Integrity",   body: "We work with full transparency and honesty — no surprises." },
+  { title: "Integrity",   body: "We work with full transparency and honesty. No surprises." },
 ];
 
 const AL_WHY_CHOOSE = [
-  { n: "01", title: "Customized Solutions, Not Templates",        body: "Every engagement starts from your business and your goals — not from a stock theme." },
+  { n: "01", title: "Customized Solutions, Not Templates",        body: "Every engagement starts from your business and your goals, not from a stock theme." },
   { n: "02", title: "Transparent Pricing & Timelines",            body: "Clear scope, clear cost, clear dates. You always know what's happening and when." },
-  { n: "03", title: "Expert Team with Cross-Industry Experience", body: "Hospitality, real estate, interiors, retail — pattern recognition we bring to your project." },
+  { n: "03", title: "Expert Team with Cross-Industry Experience", body: "Hospitality, real estate, interiors, retail: pattern recognition we bring to your project." },
   { n: "04", title: "Long-Term Partnership Approach",             body: "We measure success by what happens after launch, not just on launch day." },
 ];
 

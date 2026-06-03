@@ -20,7 +20,7 @@ function StatsSection() {
           </h2>
           <p className="section__lede section__lede--center">
             Banayoti Consulting is a results‑driven digital partner for brands that want
-            more than just online presence — they want impact. We help you build, market,
+            more than just online presence. They want impact. We help you build, market,
             and automate your brand with clarity, creativity, and modern tech.
           </p>
         </div>

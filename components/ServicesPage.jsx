@@ -1,9 +1,9 @@
 // ServicesPage.jsx — Light-theme, animated service icons, inline why-choose.
 
 const SL_WHY = [
-  { n: "01", title: "Customized Solutions, Not Templates",        body: "Every engagement starts from your business and your goals — not from a stock theme." },
+  { n: "01", title: "Customized Solutions, Not Templates",        body: "Every engagement starts from your business and your goals, not from a stock theme." },
   { n: "02", title: "Transparent Pricing & Timelines",            body: "Clear scope, clear cost, clear dates. You always know what's happening and when." },
-  { n: "03", title: "Expert Team with Cross-Industry Experience", body: "Hospitality, real estate, interiors, retail — pattern recognition we bring to your project." },
+  { n: "03", title: "Expert Team with Cross-Industry Experience", body: "Hospitality, real estate, interiors, retail: pattern recognition we bring to your project." },
   { n: "04", title: "Long-Term Partnership Approach",             body: "We measure success by what happens after launch, not just on launch day." },
 ];
 
@@ -151,7 +151,7 @@ const SL_SERVICES = [
   {
     n: "01", title: "Website Development",
     tagline: "Your Digital Home, Built to Perform",
-    desc: "We craft beautiful, responsive websites that aren't just pretty — they're built to convert. Whether you need a portfolio, corporate site, or a full e-commerce platform, we tailor every page to your brand and goals.",
+    desc: "We craft beautiful, responsive websites that aren't just pretty. They're built to convert. Whether you need a portfolio, corporate site, or a full e-commerce platform, we tailor every page to your brand and goals.",
     features: ["Custom Design & Development","WordPress, Shopify & Custom Platforms","E-commerce Store Setup","SEO-Optimized Structure","Speed, Mobile & Performance Optimization","Maintenance & Security Support"],
     tint: ["#6366f1","#1a8cff"], label: "Site",
     Icon: IconWebsite, iconColor: "#4f7cff",
@@ -159,7 +159,7 @@ const SL_SERVICES = [
   {
     n: "02", title: "Branding & Creative Design",
     tagline: "A Brand That Looks as Good as It Feels.",
-    desc: "We help you craft a cohesive and memorable brand identity that resonates with your audience — from your logo to every visual element your customers see.",
+    desc: "We help you craft a cohesive and memorable brand identity that resonates with your audience, from your logo to every visual element your customers see.",
     features: ["Logo Design & Brand Identity","Typography, Color Palette & Style Guide","Social Media Visual Systems","Product Packaging & Print Design","UI/UX Design for Websites & Apps"],
     tint: ["#a855f7","#6366f1"], label: "Mark",
     Icon: IconBranding, iconColor: "#9b5de5",

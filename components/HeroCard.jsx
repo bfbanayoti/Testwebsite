@@ -43,7 +43,7 @@ function HeroCard({ headlineStyle = "serif" }) {
       )}
 
       <p className="hero-card__lede">
-        Custom websites, data‑driven marketing, and digital branding —
+        Custom websites, data‑driven marketing, and digital branding,
         built end‑to‑end for ambitious teams who care how the details land.
       </p>
 

@@ -83,7 +83,7 @@ function QuoteTile() {
   return (
     <div className="tile tile--quote">
       <div className="tile__quote">
-        “They didn't just redesign our site — they reframed the business.”
+        “They didn't just redesign our site. They reframed the business.”
       </div>
       <div className="tile__quote-byline">
         L. Marchetti · CEO, Atelier &amp; Co.
