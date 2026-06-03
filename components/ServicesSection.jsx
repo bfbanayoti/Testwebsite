@@ -67,8 +67,8 @@ function ServicesSection() {
         <div className="section__head section__head--center" data-al-animate data-al-delay="0">
           <span className="section__eyebrow"><span className="section__eyebrow-dot"></span>What we do</span>
           <h2 id="services-title" className="section__title section__title--center section__title--2lines">
-            From bold ideas to powerful execution —<br />
-            our services cover <span className="section__title-grad">every digital need.</span>
+            From bold ideas to powerful execution<br />
+            — our services cover <span className="section__title-grad">every digital need.</span>
           </h2>
         </div>
 
